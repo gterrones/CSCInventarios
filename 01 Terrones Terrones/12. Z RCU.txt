@@ -1,0 +1,23 @@
+CU Actualizar inventario
+CU Asignar material}
+CU Atender solicitud
+CU Cerrar Sesion
+CU Consultar existencia{}*
+CU Elegir estacion
+CU Elegir material
+CU Enviar solicitud
+CU Gestionar estacion
+CU Gestionar material
+CU Gestionar usuario
+CU Imprimir requerimiento
+CU Iniciar sesion}
+CU Recepcionar material
+CU Recepcionar solicitud
+CU Requerir material
+CU Solicitar material
+CU Validar Requerimiento
+
+
+clases,
+secuencia) y 
+Test de Desarrollo

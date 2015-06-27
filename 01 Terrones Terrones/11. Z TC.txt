@@ -1,0 +1,23 @@
+TC Actualizar inventario}
+TC Asignar material}
+TC Atender solicitud}
+TC Cerrar Sesion}
+TC Consultar existencia*
+TC Elegir estacion}
+TC Elegir material}
+TC Enviar solicitud}
+TC Gestionar estacion}
+TC Gestionar matrial}
+TC Gestionar usuario}
+TC Imprimir requerimiento}
+TC Iniciar sesion}
+TC Recepcionar material}
+TC Recepcionar solicitud}
+TC Requerir material}
+TC Solicitar material}
+TC Validar Requerimiento}
+
+
+clases,
+secuencia) y 
+Test de Desarrollo
