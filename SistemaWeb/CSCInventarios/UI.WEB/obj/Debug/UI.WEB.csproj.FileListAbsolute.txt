@@ -1,0 +1,9 @@
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\bin\UI.WEB.dll
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\bin\UI.WEB.pdb
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\obj\Debug\UI.WEB.dll
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\obj\Debug\UI.WEB.pdb
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\bin\BL.CSCInventarios.dll
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\bin\Dominio.dll
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\bin\BL.CSCInventarios.pdb
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\bin\Dominio.pdb
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\obj\Debug\UI.WEB.csprojResolveAssemblyReference.cache

@@ -1,0 +1,9 @@
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\BL.CSCInventarios\bin\Debug\BL.CSCInventarios.dll
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\BL.CSCInventarios\bin\Debug\BL.CSCInventarios.pdb
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\BL.CSCInventarios\obj\Debug\BL.CSCInventarios.dll
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\BL.CSCInventarios\obj\Debug\BL.CSCInventarios.pdb
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\BL.CSCInventarios\bin\Debug\DA.CSCInventarios.dll
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\BL.CSCInventarios\bin\Debug\Dominio.dll
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\BL.CSCInventarios\bin\Debug\DA.CSCInventarios.pdb
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\BL.CSCInventarios\bin\Debug\Dominio.pdb
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\BL.CSCInventarios\obj\Debug\BL.CSCInventarios.csprojResolveAssemblyReference.cache
