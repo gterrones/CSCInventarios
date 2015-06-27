@@ -1,0 +1,7 @@
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCInventarios.DAL\bin\Debug\CSCInventarios.DAL.dll
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCInventarios.DAL\bin\Debug\CSCInventarios.DAL.pdb
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCInventarios.DAL\obj\Debug\CSCInventarios.DAL.dll
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCInventarios.DAL\obj\Debug\CSCInventarios.DAL.pdb
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCInventarios.DAL\bin\Debug\CSCInventarios.EL.dll
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCInventarios.DAL\bin\Debug\CSCInventarios.EL.pdb
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCInventarios.DAL\obj\Debug\CSCInventarios.DAL.csprojResolveAssemblyReference.cache
