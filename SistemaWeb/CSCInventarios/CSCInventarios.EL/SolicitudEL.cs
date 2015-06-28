@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CSCInventarios.EL
 {
-    public class ESolicitud
+    public class SolicitudEL
     {
 
         /// <remarks>llaveprimaria</remarks>
@@ -92,7 +92,7 @@ namespace CSCInventarios.EL
             set { sl_cantidad_aceptada = value; }
         }
 
-        public EMaterial EMaterial
+        public MaterialEL EMaterial
         {
             get
             {
@@ -103,7 +103,7 @@ namespace CSCInventarios.EL
             }
         }
 
-        public EEstacion EEstacion
+        public EstacionEL EEstacion
         {
             get
             {
@@ -114,7 +114,7 @@ namespace CSCInventarios.EL
             }
         }
 
-        public EUsuario EUsuario
+        public UsuarioEL EUsuario
         {
             get
             {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CSCInventarios.EL
 {
-    public class ERequerimiento
+    public class RequerimientoEL
     {
         private int rq_id;
 
@@ -57,7 +57,7 @@ namespace CSCInventarios.EL
             set { rq_cantidad_ingreso = value; }
         }
 
-        public EMaterial EMaterial
+        public MaterialEL EMaterial
         {
             get
             {
@@ -68,7 +68,7 @@ namespace CSCInventarios.EL
             }
         }
 
-        public EUsuario EUsuario
+        public UsuarioEL EUsuario
         {
             get
             {

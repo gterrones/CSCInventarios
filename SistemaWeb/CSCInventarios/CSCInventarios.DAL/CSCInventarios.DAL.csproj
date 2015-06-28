@@ -40,7 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EstacionDAL.cs" />
+    <Compile Include="InventarioDAL.cs" />
+    <Compile Include="MaterialDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequerimientoDAL.cs" />
+    <Compile Include="SolicitudDAL.cs" />
+    <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CSCInventarios.EL\CSCInventarios.EL.csproj">

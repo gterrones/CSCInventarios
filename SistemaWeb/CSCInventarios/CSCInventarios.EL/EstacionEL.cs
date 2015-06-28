@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CSCInventarios.EL
 {
-    public class EEstacion
+    public class EstacionEL
     {
         private int estacion_id=0;
 

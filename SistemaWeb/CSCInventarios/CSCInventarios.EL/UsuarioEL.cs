@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CSCInventarios.EL
 {
-    public class EUsuario
+    public class UsuarioEL
     {
         private int usuario_id;
 

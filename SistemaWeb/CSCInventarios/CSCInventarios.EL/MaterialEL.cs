@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CSCInventarios.EL
 {
-    public class EMaterial
+    public class MaterialEL
     {
         private int material_id;
 
