@@ -41,7 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EstacionBL.cs" />
+    <Compile Include="IEstacionBL.cs" />
+    <Compile Include="IInventarioBL.cs" />
+    <Compile Include="IMaterialBL.cs" />
     <Compile Include="InventarioBL.cs" />
+    <Compile Include="IRequerimientoBL.cs" />
+    <Compile Include="ISolicitudBL.cs" />
+    <Compile Include="IUsuarioBL.cs" />
     <Compile Include="MaterialBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequerimientoBL.cs" />

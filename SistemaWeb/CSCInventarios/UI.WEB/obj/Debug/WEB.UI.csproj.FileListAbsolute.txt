@@ -1,9 +1,9 @@
 C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\bin\UI.WEB.dll
 C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\bin\UI.WEB.pdb
-C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\obj\Debug\WEB.UI.csprojResolveAssemblyReference.cache
-C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\obj\Debug\UI.WEB.dll
-C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\obj\Debug\UI.WEB.pdb
 C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\bin\CSCInventarios.BL.dll
 C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\bin\CSCInventarios.EL.dll
 C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\bin\CSCInventarios.BL.pdb
 C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\bin\CSCInventarios.EL.pdb
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\obj\Debug\WEB.UI.csprojResolveAssemblyReference.cache
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\obj\Debug\UI.WEB.dll
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\UI.WEB\obj\Debug\UI.WEB.pdb
