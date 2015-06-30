@@ -13,5 +13,6 @@ namespace CSCInventarios.EL
 	    public string usuario_telefono{get;set;}
 	    public string usuario_usuario{get;set;}
         public string usuario_clave { get; set; }
+        public Boolean usuario_eliminado { get; set; }
     }
 }

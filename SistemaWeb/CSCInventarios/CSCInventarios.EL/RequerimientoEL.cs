@@ -11,6 +11,7 @@ namespace CSCInventarios.EL
 	    public int usuario_id{get;set;}
         public DateTime rq_fecha{get;set;}
         public Boolean rq_validacion { get; set; }
+        public Boolean rq_eliminado { get; set; }
 
         public UsuarioEL EUsuario { get; set; }
         public List<DetalleRequerimiento> DetalleRequerimiento { get; set; }

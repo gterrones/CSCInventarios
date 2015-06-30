@@ -17,6 +17,7 @@ namespace CSCInventarios.EL
 	    public Boolean sl_asignacion{get;set;}
         public Boolean sl_atencion{get;set;}
         public Boolean sl_aceptacion { get; set; }
+        public Boolean sl_eliminado { get; set; }
 
         public List<DetalleSolicitudEL> DetalleSolicitud { get; set; }
         public UsuarioEL UsuarioEL { get; set; }

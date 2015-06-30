@@ -12,6 +12,7 @@ namespace CSCInventarios.EL
 	    public string estacion_zona{get; set;}
 	    public string estacion_coordenadas{get; set;}
         public string estacion_referencia { get; set; }
+        public Boolean estacion_eliminado { get; set; }
 
         public override string ToString()
         {

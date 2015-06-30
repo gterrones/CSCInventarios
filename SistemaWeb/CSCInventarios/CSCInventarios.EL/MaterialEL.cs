@@ -12,5 +12,6 @@ namespace CSCInventarios.EL
 	    public string material_modelo{get; set;}
 	    public int material_cantidad{get; set;}
         public string material_observacion { get; set; }
+        public Boolean material_eliminado { get; set; }
     }
 }
