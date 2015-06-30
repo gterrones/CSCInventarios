@@ -2,3 +2,4 @@ C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCIn
 C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCInventarios.EL\bin\Debug\CSCInventarios.EL.pdb
 C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCInventarios.EL\obj\Debug\CSCInventarios.EL.dll
 C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCInventarios.EL\obj\Debug\CSCInventarios.EL.pdb
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCInventarios.EL\obj\Debug\CSCInventarios.EL.csprojResolveAssemblyReference.cache

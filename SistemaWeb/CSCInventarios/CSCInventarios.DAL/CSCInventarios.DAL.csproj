@@ -31,7 +31,47 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DBSystem.BussinesEntities">
+      <HintPath>F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\DBSystem.BussinesEntities.dll</HintPath>
+    </Reference>
+    <Reference Include="DBSystem.DataAccess">
+      <HintPath>F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\DBSystem.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Eastupright.EnterpriseLibrary.Common, Version=2015.6.16.27492, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Eastupright.EnterpriseLibrary.Common.2015.6.16.2\lib\Eastupright.EnterpriseLibrary.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,6 +80,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cnx.cs" />
     <Compile Include="EstacionDAL.cs" />
     <Compile Include="IEstacionDAL.cs" />
     <Compile Include="IInventarioDAL.cs" />
@@ -59,6 +100,10 @@
       <Project>{EA9232C6-11DB-420A-BE99-F139BEE79A28}</Project>
       <Name>CSCInventarios.EL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

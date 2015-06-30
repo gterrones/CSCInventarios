@@ -41,13 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DetalleRequerimiento.cs" />
-    <Compile Include="DetalleSolicitudEL.cs" />
-    <Compile Include="EstacionEL.cs" />
-    <Compile Include="InventarioEL.cs" />
-    <Compile Include="MaterialEL.cs" />
-    <Compile Include="RequerimientoEL.cs" />
-    <Compile Include="SolicitudEL.cs" />
-    <Compile Include="UsuarioEL.cs" />
+    <Compile Include="DetalleSolicitud.cs" />
+    <Compile Include="Estacion.cs" />
+    <Compile Include="Inventario.cs" />
+    <Compile Include="Material.cs" />
+    <Compile Include="Requerimiento.cs" />
+    <Compile Include="Solicitud.cs" />
+    <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

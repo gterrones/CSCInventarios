@@ -1,0 +1,1477 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Eastupright.EnterpriseLibrary.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Eastupright.EnterpriseLibrary.Common.AssemblyHelper">
+            <summary>
+            程序集属性访问器
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.AssemblyHelper.#ctor(System.Reflection.Assembly)">
+            <summary>
+            
+            </summary>
+            <param name="assembly">Assembly.GetExecutingAssembly()</param>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.AssemblyHelper.Assembly">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.AssemblyHelper.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.AssemblyHelper.Version">
+            <summary>
+            版本
+            </summary>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.AssemblyHelper.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.AssemblyHelper.Product">
+            <summary>
+            产品
+            </summary>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.AssemblyHelper.Copyright">
+            <summary>
+            版权
+            </summary>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.AssemblyHelper.Company">
+            <summary>
+            公司
+            </summary>
+        </member>
+        <member name="T:Eastupright.EnterpriseLibrary.Common.Data.ConnectionString">
+            <summary>
+            数据库连接字符串。
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.ConnectionString.ForSql(System.String,System.String,System.String,System.String)">
+            <summary>
+            获取用于SqlServer的数据库连接字符串。
+            </summary>
+            <param name="server">
+            SqlServer数据库服务器IP地址、名称。
+            如果SqlServer数据库服务器是本机则为(local)。
+            </param>
+            <param name="databaseName">数据库名称。</param>
+            <param name="userId">数据库登录用户。</param>
+            <param name="userPwd">数据库登录用户密码。</param>
+            <returns>SqlServer连接字符串。</returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.ConnectionString.ForMdb(System.String)">
+            <summary>
+            获取用于MDB的数据库连接字符串。
+            </summary>
+            <param name="path">
+            Mdb数据库文件的路径。
+            格式：X:\FolderName\FileName.mdb。
+            说明：App_Data等于|DataDirectory|。
+            </param>
+            <returns>MDB的数据库连接字符串。</returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.ConnectionString.ForXls(System.String)">
+            <summary>
+            获取用于XLS的数据库连接字符串。
+            </summary>
+            <param name="path">
+            Excel文件的路径。
+            格式：X:\FolderName\FileName.xls。
+            说明：App_Data等于|DataDirectory|。
+            </param>
+            <returns>XLS的数据库连接字符串。</returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.ConnectionString.ForDbf(System.String)">
+            <summary>
+            获取用于DBF的数据库连接字符串。
+            </summary>
+            <param name="path">
+            Dbf文件夹。
+            格式：X:\FolderName\。
+            App_Data等于|DataDirectory|。
+            </param>
+            <returns>DBF的数据库连接字符串。</returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.ConnectionString.GetDbnameForSql(System.String)">
+            <summary>
+            获取SqlServer数据库连接字符串的中的数据库名称
+            </summary>
+            <param name="connectionString">SqlServer连接字符串</param>
+            <returns></returns>
+        </member>
+        <member name="T:Eastupright.EnterpriseLibrary.Common.Data.OdbcHelper">
+            <summary>
+            Odbc。
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.OdbcHelper.#ctor(System.String)">
+            <summary>
+            构造函数，实例化时赋值数据库连接字符串。
+            </summary>
+            <param name="connectionString">数据库连接字符串。</param>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.OdbcHelper.GetConnection">
+            <summary>
+            获取OdbcConnection。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.OdbcHelper.ExecuteScalar(System.String)">
+            <summary>
+            执行查询，返回结果集中第一行第一列。
+            </summary>
+            <param name="cmdText">Select语句。</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.OdbcHelper.ExecuteNonQuery(System.String)">
+            <summary>
+            执行Sql命令并返回受影响的行数。
+            </summary>
+            <param name="cmdText">Command语句。</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.OdbcHelper.ExecuteReader(System.String)">
+            <summary>
+            获取OdbcDataReader；
+            调用后不要忘记DataReader.Read()。
+            </summary>
+            <param name="cmdText">Select语句。</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.OdbcHelper.ExecuteDataSet(System.String)">
+            <summary>
+            获取DataSet
+            </summary>
+            <param name="cmdText">Select语句。</param>
+            <returns></returns>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.Data.OdbcHelper.ConnectionString">
+            <summary>
+            数据库连接字符串。
+            </summary>
+        </member>
+        <member name="T:Eastupright.EnterpriseLibrary.Common.Data.OleDbHelper">
+            <summary>
+            OleDb。
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.OleDbHelper.#ctor(System.String)">
+            <summary>
+            构造函数，实例化对象时赋值数据库连接字符串。
+            </summary>
+            <param name="connectionString">数据库连接字符串。</param>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.OleDbHelper.GetConnection">
+            <summary>
+            获取OleDbConnection。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.OleDbHelper.ExecuteScalar(System.String)">
+            <summary>
+            执行查询，返回结果集中第一行第一列。
+            </summary>
+            <param name="cmdText">Select语句。</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.OleDbHelper.ExecuteNonQuery(System.String)">
+            <summary>
+            执行Sql命令并返回受影响的行数。
+            </summary>
+            <param name="cmdText">Command语句。</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.OleDbHelper.ExecuteReader(System.String)">
+            <summary>
+            获取OleDbDataReader；
+            调用后不要忘记DataReader.Read()。
+            </summary>
+            <param name="cmdText">Select语句。</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.OleDbHelper.ExecuteDataSet(System.String)">
+            <summary>
+            获取DataSet。
+            </summary>
+            <param name="cmdText">Select语句。</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.OleDbHelper.GetExcelFirstSheetName(System.Data.OleDb.OleDbConnection)">
+            <summary>
+            获取Excel的第一个Sheet名称；
+            带美元符号格式：Sheet1$。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.Data.OleDbHelper.ConnectionString">
+            <summary>
+            数据库连接字符串。
+            </summary>
+        </member>
+        <member name="T:Eastupright.EnterpriseLibrary.Common.Data.SqlClientHelper">
+            <summary>
+            SqlClient。
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.SqlClientHelper.#ctor(System.String)">
+            <summary>
+            构造函数，实例化对象时赋值数据库连接字符串。
+            </summary>
+            <param name="connectionString">数据库连接字符串。</param>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.SqlClientHelper.GetConnection">
+            <summary>
+            获取SqlConnection。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.SqlClientHelper.ExecuteScalar(System.String)">
+            <summary>
+            执行查询，返回结果集中第一行第一列。
+            </summary>
+            <param name="cmdText">Select语句。</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.SqlClientHelper.ExecuteNonQuery(System.String)">
+            <summary>
+            执行Sql命令并返回受影响的行数。
+            </summary>
+            <param name="cmdText">Command语句。</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.SqlClientHelper.ExecuteReader(System.String)">
+            <summary>
+            获取SqlDataReader；
+            调用后不要忘记DataReader.Read()。
+            </summary>
+            <param name="cmdText">Select语句。</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.Data.SqlClientHelper.ExecuteDataSet(System.String)">
+            <summary>
+            获取DataSet。
+            </summary>
+            <param name="cmdText">Select语句。</param>
+            <returns></returns>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.Data.SqlClientHelper.ConnectionString">
+            <summary>
+            数据库连接字符串。
+            </summary>
+        </member>
+        <member name="T:Eastupright.EnterpriseLibrary.Common.CommonUtility">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.CommonUtility.Age(System.DateTime,System.DateTime)">
+            <summary>
+            周岁
+            </summary>
+            <param name="start"></param>
+            <param name="stop"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.CommonUtility.GetCodePage(System.Text.Encoding,System.String)">
+            <summary>
+            获取字符编码。
+            Identifier .NET Name Additional information 
+            037 IBM037 IBM EBCDIC US-Canada 
+            437 IBM437 OEM United States 
+            500 IBM500 IBM EBCDIC International 
+            708 ASMO-708 Arabic (ASMO 708) 
+            709  Arabic (ASMO-449+, BCON V4) 
+            710  Arabic - Transparent Arabic 
+            720 DOS-720 Arabic (Transparent ASMO); Arabic (DOS) 
+            737 ibm737 OEM Greek (formerly 437G); Greek (DOS) 
+            775 ibm775 OEM Baltic; Baltic (DOS) 
+            850 ibm850 OEM Multilingual Latin 1; Western European (DOS) 
+            852 ibm852 OEM Latin 2; Central European (DOS) 
+            855 IBM855 OEM Cyrillic (primarily Russian) 
+            857 ibm857 OEM Turkish; Turkish (DOS) 
+            858 IBM00858 OEM Multilingual Latin 1 + Euro symbol 
+            860 IBM860 OEM Portuguese; Portuguese (DOS) 
+            861 ibm861 OEM Icelandic; Icelandic (DOS) 
+            862 DOS-862 OEM Hebrew; Hebrew (DOS) 
+            863 IBM863 OEM French Canadian; French Canadian (DOS) 
+            864 IBM864 OEM Arabic; Arabic (864) 
+            865 IBM865 OEM Nordic; Nordic (DOS) 
+            866 cp866 OEM Russian; Cyrillic (DOS) 
+            869 ibm869 OEM Modern Greek; Greek, Modern (DOS) 
+            870 IBM870 IBM EBCDIC Multilingual/ROECE (Latin 2); IBM EBCDIC Multilingual Latin 2 
+            874 windows-874 ANSI/OEM Thai (same as 28605, ISO 8859-15); Thai (Windows) 
+            875 cp875 IBM EBCDIC Greek Modern 
+            932 shift_jis ANSI/OEM Japanese; Japanese (Shift-JIS) 
+            936 gb2312 ANSI/OEM Simplified Chinese (PRC, Singapore); Chinese Simplified (GB2312) 
+            949 ks_c_5601-1987 ANSI/OEM Korean (Unified Hangul Code) 
+            950 big5 ANSI/OEM Traditional Chinese (Taiwan; Hong Kong SAR, PRC); Chinese Traditional (Big5) 
+            1026 IBM1026 IBM EBCDIC Turkish (Latin 5) 
+            1047 IBM01047 IBM EBCDIC Latin 1/Open System 
+            1140 IBM01140 IBM EBCDIC US-Canada (037 + Euro symbol); IBM EBCDIC (US-Canada-Euro) 
+            1141 IBM01141 IBM EBCDIC Germany (20273 + Euro symbol); IBM EBCDIC (Germany-Euro) 
+            1142 IBM01142 IBM EBCDIC Denmark-Norway (20277 + Euro symbol); IBM EBCDIC (Denmark-Norway-Euro) 
+            1143 IBM01143 IBM EBCDIC Finland-Sweden (20278 + Euro symbol); IBM EBCDIC (Finland-Sweden-Euro) 
+            1144 IBM01144 IBM EBCDIC Italy (20280 + Euro symbol); IBM EBCDIC (Italy-Euro) 
+            1145 IBM01145 IBM EBCDIC Latin America-Spain (20284 + Euro symbol); IBM EBCDIC (Spain-Euro) 
+            1146 IBM01146 IBM EBCDIC United Kingdom (20285 + Euro symbol); IBM EBCDIC (UK-Euro) 
+            1147 IBM01147 IBM EBCDIC France (20297 + Euro symbol); IBM EBCDIC (France-Euro) 
+            1148 IBM01148 IBM EBCDIC International (500 + Euro symbol); IBM EBCDIC (International-Euro) 
+            1149 IBM01149 IBM EBCDIC Icelandic (20871 + Euro symbol); IBM EBCDIC (Icelandic-Euro) 
+            1200 utf-16 Unicode UTF-16, little endian byte order (BMP of ISO 10646); available only to managed applications 
+            1201 unicodeFFFE Unicode UTF-16, big endian byte order; available only to managed applications 
+            1250 windows-1250 ANSI Central European; Central European (Windows) 
+            1251 windows-1251 ANSI Cyrillic; Cyrillic (Windows) 
+            1252 windows-1252 ANSI Latin 1; Western European (Windows) 
+            1253 windows-1253 ANSI Greek; Greek (Windows) 
+            1254 windows-1254 ANSI Turkish; Turkish (Windows) 
+            1255 windows-1255 ANSI Hebrew; Hebrew (Windows) 
+            1256 windows-1256 ANSI Arabic; Arabic (Windows) 
+            1257 windows-1257 ANSI Baltic; Baltic (Windows) 
+            1258 windows-1258 ANSI/OEM Vietnamese; Vietnamese (Windows) 
+            1361 Johab Korean (Johab) 
+            10000 macintosh MAC Roman; Western European (Mac) 
+            10001 x-mac-japanese Japanese (Mac) 
+            10002 x-mac-chinesetrad MAC Traditional Chinese (Big5); Chinese Traditional (Mac) 
+            10003 x-mac-korean Korean (Mac) 
+            10004 x-mac-arabic Arabic (Mac) 
+            10005 x-mac-hebrew Hebrew (Mac) 
+            10006 x-mac-greek Greek (Mac) 
+            10007 x-mac-cyrillic Cyrillic (Mac) 
+            10008 x-mac-chinesesimp MAC Simplified Chinese (GB 2312); Chinese Simplified (Mac) 
+            10010 x-mac-romanian Romanian (Mac) 
+            10017 x-mac-ukrainian Ukrainian (Mac) 
+            10021 x-mac-thai Thai (Mac) 
+            10029 x-mac-ce MAC Latin 2; Central European (Mac) 
+            10079 x-mac-icelandic Icelandic (Mac) 
+            10081 x-mac-turkish Turkish (Mac) 
+            10082 x-mac-croatian Croatian (Mac) 
+            12000 utf-32 Unicode UTF-32, little endian byte order; available only to managed applications 
+            12001 utf-32BE Unicode UTF-32, big endian byte order; available only to managed applications 
+            20000 x-Chinese_CNS CNS Taiwan; Chinese Traditional (CNS) 
+            20001 x-cp20001 TCA Taiwan 
+            20002 x_Chinese-Eten Eten Taiwan; Chinese Traditional (Eten) 
+            20003 x-cp20003 IBM5550 Taiwan 
+            20004 x-cp20004 TeleText Taiwan 
+            20005 x-cp20005 Wang Taiwan 
+            20105 x-IA5 IA5 (IRV International Alphabet No. 5, 7-bit); Western European (IA5) 
+            20106 x-IA5-German IA5 German (7-bit) 
+            20107 x-IA5-Swedish IA5 Swedish (7-bit) 
+            20108 x-IA5-Norwegian IA5 Norwegian (7-bit) 
+            20127 us-ascii US-ASCII (7-bit) 
+            20261 x-cp20261 T.61 
+            20269 x-cp20269 ISO 6937 Non-Spacing Accent 
+            20273 IBM273 IBM EBCDIC Germany 
+            20277 IBM277 IBM EBCDIC Denmark-Norway 
+            20278 IBM278 IBM EBCDIC Finland-Sweden 
+            20280 IBM280 IBM EBCDIC Italy 
+            20284 IBM284 IBM EBCDIC Latin America-Spain 
+            20285 IBM285 IBM EBCDIC United Kingdom 
+            20290 IBM290 IBM EBCDIC Japanese Katakana Extended 
+            20297 IBM297 IBM EBCDIC France 
+            20420 IBM420 IBM EBCDIC Arabic 
+            20423 IBM423 IBM EBCDIC Greek 
+            20424 IBM424 IBM EBCDIC Hebrew 
+            20833 x-EBCDIC-KoreanExtended IBM EBCDIC Korean Extended 
+            20838 IBM-Thai IBM EBCDIC Thai 
+            20866 koi8-r Russian (KOI8-R); Cyrillic (KOI8-R) 
+            20871 IBM871 IBM EBCDIC Icelandic 
+            20880 IBM880 IBM EBCDIC Cyrillic Russian 
+            20905 IBM905 IBM EBCDIC Turkish 
+            20924 IBM00924 IBM EBCDIC Latin 1/Open System (1047 + Euro symbol) 
+            20932 EUC-JP Japanese (JIS 0208-1990 and 0121-1990) 
+            20936 x-cp20936 Simplified Chinese (GB2312); Chinese Simplified (GB2312-80) 
+            20949 x-cp20949 Korean Wansung 
+            21025 cp1025 IBM EBCDIC Cyrillic Serbian-Bulgarian 
+            21027  (deprecated) 
+            21866 koi8-u Ukrainian (KOI8-U); Cyrillic (KOI8-U) 
+            28591 iso-8859-1 ISO 8859-1 Latin 1; Western European (ISO) 
+            28592 iso-8859-2 ISO 8859-2 Central European; Central European (ISO) 
+            28593 iso-8859-3 ISO 8859-3 Latin 3 
+            28594 iso-8859-4 ISO 8859-4 Baltic 
+            28595 iso-8859-5 ISO 8859-5 Cyrillic 
+            28596 iso-8859-6 ISO 8859-6 Arabic 
+            28597 iso-8859-7 ISO 8859-7 Greek 
+            28598 iso-8859-8 ISO 8859-8 Hebrew; Hebrew (ISO-Visual) 
+            28599 iso-8859-9 ISO 8859-9 Turkish 
+            28603 iso-8859-13 ISO 8859-13 Estonian 
+            28605 iso-8859-15 ISO 8859-15 Latin 9 
+            29001 x-Europa Europa 3 
+            38598 iso-8859-8-i ISO 8859-8 Hebrew; Hebrew (ISO-Logical) 
+            50220 iso-2022-jp ISO 2022 Japanese with no halfwidth Katakana; Japanese (JIS) 
+            50221 csISO2022JP ISO 2022 Japanese with halfwidth Katakana; Japanese (JIS-Allow 1 byte Kana) 
+            50222 iso-2022-jp ISO 2022 Japanese JIS X 0201-1989; Japanese (JIS-Allow 1 byte Kana - SO/SI) 
+            50225 iso-2022-kr ISO 2022 Korean 
+            50227 x-cp50227 ISO 2022 Simplified Chinese; Chinese Simplified (ISO 2022) 
+            50229  ISO 2022 Traditional Chinese 
+            50930  EBCDIC Japanese (Katakana) Extended 
+            50931  EBCDIC US-Canada and Japanese 
+            50933  EBCDIC Korean Extended and Korean 
+            50935  EBCDIC Simplified Chinese Extended and Simplified Chinese 
+            50936  EBCDIC Simplified Chinese 
+            50937  EBCDIC US-Canada and Traditional Chinese 
+            50939  EBCDIC Japanese (Latin) Extended and Japanese 
+            51932 euc-jp EUC Japanese 
+            51936 EUC-CN EUC Simplified Chinese; Chinese Simplified (EUC) 
+            51949 euc-kr EUC Korean 
+            51950  EUC Traditional Chinese 
+            52936 hz-gb-2312 HZ-GB2312 Simplified Chinese; Chinese Simplified (HZ) 
+            54936 GB18030 Windows XP and later: GB18030 Simplified Chinese (4 byte); Chinese Simplified (GB18030) 
+            57002 x-iscii-de ISCII Devanagari 
+            57003 x-iscii-be ISCII Bengali 
+            57004 x-iscii-ta ISCII Tamil 
+            57005 x-iscii-te ISCII Telugu 
+            57006 x-iscii-as ISCII Assamese 
+            57007 x-iscii-or ISCII Oriya 
+            57008 x-iscii-ka ISCII Kannada 
+            57009 x-iscii-ma ISCII Malayalam 
+            57010 x-iscii-gu ISCII Gujarati 
+            57011 x-iscii-pa ISCII Punjabi 
+            65000 utf-7 Unicode (UTF-7) 
+            65001 utf-8 Unicode (UTF-8) 
+            </summary>
+            <param name="encoding">
+            Encoding Ec_Unicode = Encoding.Unicode;
+            Encoding Ec_Utf8 = Encoding.UTF8;
+            Encoding Ec_Gbk = Encoding.GetEncoding("gbk");
+            Encoding Ec_Gb2312 = Encoding.GetEncoding(20936);
+            Encoding Ec_Big5 = Encoding.GetEncoding(950);
+            </param>
+            <param name="input">字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.CommonUtility.IDCardNumber15To18(System.String)">
+            <summary>
+            把15位的身份证号转换为18位。
+            
+            算法如下：
+            18位身份证标准在国家质量技术监督局于1999年7月1日实施的GB11643-1999《公民身份号码》中做了明确的规定。 GB11643-1999《公民身份号码》为GB11643-1989《社会保障号码》的修订版，其中指出将原标准名称"社会保障号码"更名为"公民身份号码"，另外GB11643-1999《公民身份号码》从实施之日起代替GB11643-1989。GB11643-1999《公民身份号码》主要内容如下： 
+            一、范围 
+            该标准规定了公民身份号码的编码对象、号码的结构和表现形式，使每个编码对象获得一个唯一的、不变的法定号码。 
+            二、编码对象 
+            公民身份号码的编码对象是具有中华人民共和国国籍的公民。 
+            三、号码的结构和表示形式 
+            1、号码的结构 
+            公民身份号码是特征组合码，由十七位数字本体码和一位校验码组成。排列顺序从左至右依次为：六位数字地址码，八位数字出生日期码，三位数字顺序码和一位数字校验码。 
+            2、地址码 
+            表示编码对象常住户口所在县(市、旗、区)的行政区划代码，按GB/T2260的规定执行。 
+            3、出生日期码 
+            表示编码对象出生的年、月、日，按GB/T7408的规定执行，年、月、日代码之间不用分隔符。 
+            4、顺序码 
+            表示在同一地址码所标识的区域范围内，对同年、同月、同日出生的人编定的顺序号，顺序码的奇数分配给男性，偶数分配给女性。 
+            5、校验码 
+            （1）十七位数字本体码加权求和公式 
+            S = Sum(Ai * Wi), i = 0, ... , 16 ，先对前17位数字的权求和 
+            Ai:表示第i位置上的身份证号码数字值 
+            Wi:表示第i位置上的加权因子 
+            Wi: 7 9 10 5 8 4 2 1 6 3 7 9 10 5 8 4 2 
+            （2）计算模 
+            Y = mod(S, 11) 
+            （3）通过模得到对应的校验码 
+            Y: 0 1 2 3 4 5 6 7 8 9 10 
+            校验码: 1 0 X 9 8 7 6 5 4 3 2 
+            四、举例如下： 
+            北京市朝阳区: 11010519491231002X 
+            广东省汕头市: 440524188001010014 
+            15位升18的方法
+            根据〖中华人民共和国国家标准 GB 11643-1999〗中有关公民身份号码的规定，公民身份号码是特征组合码，由十七位数字本体码和一位数字校验码组成。排列顺序从左至右依次为：六位数字地址码，八位数字出生日期码，三位数字顺序码和一位数字校验码。 
+            地址码表示编码对象常住户口所在县(市、旗、区)的行政区划代码。生日期码表示编码对象出生的年、月、日，其中年份用四位数字表示，年、月、日之间不用分隔符。顺序码表示同一地址码所标识的区域范围内，对同年、月、日出生的人员编定的顺序号。顺序码的奇数分给男性，偶数分给女性。校验码是根据前面十七位数字码，按照ISO 7064:1983.MOD 11-2校验码计算出来的检验码。下面举例说明该计算方法。 
+            15位的身份证编码首先把出生年扩展为4位，简单的就是增加一个19，但是这对于1900年出生的人不使用（这样的寿星不多了）。某男性公民身份号码本体码为34052419800101001，首先按照公式⑴计算： 
+            ∑(ai×Wi)(mod 11)--->(1) 
+            公式(1)中： 
+            i----表示号码字符从由至左包括校验码在内的位置序号； 
+            ai----表示第i位置上的号码字符值； 
+            Wi----示第i位置上的加权因子，其数值依据公式Wi=2（n-1）(mod 11)计算得出。 
+            i 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 
+            ai 3 4 0 5 2 4 1 9 8 0 0 1 0 1 0 0 1 a1 
+            Wi 7 9 10 5 8 4 2 1 6 3 7 9 10 5 8 4 2 1 
+            ai×Wi 21 36 0 25 16 16 2 9 48 0 0 9 0 5 0 0 2 a1 
+            根据公式(1)进行计算： 
+            ∑(ai×Wi) =（21+36+0+25+16+16+2+9+48++0+0+9+0+5+0+0+2) = 189
+            189 ÷ 11 = 17 + 2/11
+            ∑(ai×Wi)(mod 11) = 2
+            然后根据计算的结果，从下面的表中查出相应的校验码，其中“X”表示计算结果为10。
+            ∑(ai×WI)(mod 11) 0 1 2 3 4 5 6 7 8 9 10 
+            校验码字符值ai 1 0 X 9 8 7 6 5 4 3 2 
+            根据上表，查出计算结果为2的校验码为所以该人员的公民身份号码应该为 34052419800101001X。
+            </summary>
+            <param name="id15">15位身份证号码。</param>
+            <returns>18位身份证号码。</returns>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.CommonUtility.Library">
+            <summary>
+            0-9A-Z
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.CommonUtility.GetRandomString(System.Char[],System.Int32)">
+            <summary>
+            从指定原始库空中随机获取指定长度的字符串
+            </summary>
+            <param name="library">字符串源库</param>
+            <param name="length">指定返回的字符串的长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.CommonUtility.ReplaceEscape(System.String)">
+            <summary>
+            转换掉转转义字符
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.CommonUtility.ToSBC(System.String)">
+            <summary>
+            转为全角字符串
+            </summary>
+            <param name="input">原始字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.CommonUtility.ToDBC(System.String)">
+            <summary>
+            转为半角字符串
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.CommonUtility.ToChinese(System.Decimal)">
+            <summary> 
+            根据人民币数字小写金额转换为中文大写金额
+            </summary> 
+            <param name="input">小写数字金额</param> 
+            <returns></returns> 
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.CommonUtility.ToChinese(System.DayOfWeek)">
+            <summary>
+            获取今天的中文星期日期 星期日、星期一
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.CommonUtility.SendEmail(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            发邮件
+            </summary>
+            <param name="fromAddress">fromyouxiang@163.com</param>
+            <param name="fromUsername">fromyouxiang</param>
+            <param name="fromPassword">fromyouxiang163</param>
+            <param name="toAddress">2360924687@qq.com</param>
+            <param name="subject">来自网站的客户留言</param>
+            <param name="htmlBody">HTML内容</param>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.CommonUtility.SendEmail(System.String,System.String,System.String,System.String,System.String,System.String,System.Net.Mail.Attachment[])">
+            <summary>
+            发邮件
+            </summary>
+            <param name="fromAddress">fromyouxiang@163.com</param>
+            <param name="fromUsername">fromyouxiang</param>
+            <param name="fromPassword">fromyouxiang163</param>
+            <param name="toAddress">2360924687@qq.com</param>
+            <param name="subject">来自网站的客户留言</param>
+            <param name="htmlBody">HTML内容</param>
+            <param name="attachments">附件</param>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.CommonUtility.DownloadWithWebRequest(System.String,System.String,System.Int32@)">
+            <summary>
+            下载一个文件，返回指示是否下载成功
+            </summary>
+            <param name="requestUriString">标识Internet资源的URI</param>
+            <param name="path">文件保存全路径</param>
+            <param name="completed">完成进度</param>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.CommonUtility.Substring(System.String,System.Int32)">
+            <summary>
+            截取指定长度的字符串
+            </summary>
+            <param name="input"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.CommonUtility.OmrParse(System.String,System.String,System.Char)">
+            <summary>
+            OMR格式化字符串（两个参数的长度必须相同）。
+            0000：ABCD=.；0101：ABCD=>；0100：ABCD=B；
+            </summary>
+            <param name="value">常规：0和1的组成的字符串</param>
+            <param name="library">对应的字符串库</param>
+            <param name="filled">已涂点对应的字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.CommonUtility.OmrParse(System.Char[],System.Int32[],System.Char)">
+            <summary>
+            OMR格式化字符串（字符数组的长度必须与整数数组的和相等）。
+            </summary>
+            <param name="value">常规：0和1的组成的数组。eg:[0,1,0,1,0,1,0,1,0]</param>
+            <param name="length">长度数组。eg:[4,3,2,3,5]</param>
+            <param name="filled">已涂点对应的字符</param>
+            <returns></returns>
+        </member>
+        <member name="T:Eastupright.EnterpriseLibrary.Common.HtmlUtility">
+            <summary>
+            从HTML中提取文本
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.HtmlUtility.GetTextFromHtml1(System.String)">
+            <summary>
+            **推荐**
+            从HTML中提取文本
+            </summary>
+            <param name="html">HTML源码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.HtmlUtility.GetTextFromHtml2(System.String)">
+            <summary>
+            从HTML中提取文本
+            </summary>
+            <param name="html">HTML源码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.HtmlUtility.GetHtmlFromUri(System.String,System.Text.Encoding)">
+            <summary>
+            从URI获取HTML代码。
+            ----------Server
+            StreamWriter streamWriter = new StreamWriter("To.html", false, Encoding.Default);
+            HttpContext.Current.Server.Execute("From.aspx", streamWriter);
+            streamWriter.Close();
+            -------------Page_Init
+            StringWriter stringWriter = new StringWriter();
+            HtmlTextWriter htmlTextWriter = new HtmlTextWriter(stringWriter);
+            base.Render(htmlTextWriter);
+            StreamWriter streamWriter = new StreamWriter("To.html", false, Encoding.Default);
+            streamWriter.Write(stringWriter.ToString());
+            streamWriter.Close();
+            htmlTextWriter.Close();
+            Response.Write(stringWriter.ToString());
+            -------------
+            </summary>
+            <param name="requestUriString">标识Internet资源的URI。</param>
+            <param name="encoding">编码。</param>
+            <returns>HTML代码字符串。</returns>
+        </member>
+        <member name="T:Eastupright.EnterpriseLibrary.Common.ImageUtility">
+            <summary>
+            图片：裁切、缩略、水印、二进制
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.ImageUtility.GetBytes(System.IO.Stream)">
+            <summary>
+            获取图片的二进制数据（由Stream）。
+            水晶报表只支持OleDb的静态加载图片和动态在IBolbFieldObject（仅支持JPEG和BMP格式）中显示图片；
+            因此，需要把任意格式的图片预先转换成受支持的JEPG或BMP格式，再填充到DataSet中，然后动态地推入到水晶报表中。
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.ImageUtility.GetBytes(System.String)">
+            <summary>
+            获取图片的二进制数据（由Picture）。
+            水晶报表只支持OleDb的静态加载图片和动态在IBolbFieldObject（仅支持JPEG和BMP格式）中显示图片；
+            因此，需要把任意格式的图片预先转换成受支持的JEPG或BMP格式，再填充到DataSet中，然后动态地推入到水晶报表中。
+            </summary>
+            <param name="path">
+            图片文件的物理路径；
+            格式：X:\FolderName\FileName.extend。
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.ImageUtility.IsImageContentType(System.String)">
+            <summary> 
+            判断文件类型是否为WEB格式图片 
+            </summary> 
+            <param name="contentType">
+            HttpPostedFile.ContentType
+            image/pjpeg
+            image/jpeg
+            image/jpg
+            image/png
+            image/x-png
+            image/gif
+            image/bmp
+            </param> 
+            <returns></returns> 
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.ImageUtility.GetImageContentType(System.String)">
+            <summary>
+            转换图片类型为标准图片类型
+            [image/pjpeg，image/jpeg，image/jpg]-->[image/jpeg]
+            [image/png，image/x-png]-->[image/png]
+            </summary>
+            <param name="contentType">
+            HttpPostedFile.ContentType
+            image/pjpeg
+            image/jpeg
+            image/jpg
+            image/png
+            image/x-png
+            image/gif
+            image/bmp
+            </param> 
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.ImageUtility.GetImageCodecInfo(System.String)">
+            <summary>
+            获取图片编码解码器
+            </summary>
+            <param name="contentType">
+            HttpPostedFile.ContentType
+            image/pjpeg
+            image/jpeg
+            image/jpg
+            image/png
+            image/x-png
+            image/gif
+            image/bmp
+            </param> 
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.ImageUtility.IsIndexedPixelFormat(System.Drawing.Imaging.PixelFormat)">
+            <summary>
+            判断是否为像素索引格式
+            </summary>
+            <param name="pixelFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.ImageUtility.GetNonPixelIndexedImage(System.Drawing.Image)">
+            <summary>
+            将像素索引格式的图片转为非像素索引格式的标准图像
+            </summary>
+            <param name="sourceImage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.ImageUtility.GetWaterImagePoint(System.Drawing.Size,System.Drawing.Size,System.Int32,System.Int32)">
+            <summary>
+            获取水印图片位置
+            </summary>
+            <param name="sourceImageSize">原始图片大小</param>
+            <param name="waterImageSize">水印图片大小</param>
+            <param name="margin">边距</param>
+            <param name="position">
+            左上1
+            上中2
+            右上3
+            中左4
+            中中5
+            右中6
+            左下7
+            下中8
+            右下9
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.ImageUtility.AddWaterMark(System.Drawing.Image,System.Drawing.Imaging.ImageCodecInfo,System.String,System.Int32,System.String,System.Drawing.Font,System.Drawing.Brush,System.Drawing.Point,System.Drawing.Image,System.Drawing.Point)">
+            <summary>
+            图片加水印
+            </summary>
+            <param name="sourceImage">原始图片</param>
+            <param name="imageCodecInfo">原始图片编码解码器</param> 
+            <param name="savePath">图片文件存放地址，例Folder/File.jpg</param>
+            <param name="quality">质量（范围0-100）</param> 
+            <param name="waterText">水印文字（为 IsNullOrEmpty 表示不使用文字水印）</param>
+            <param name="waterTextFont">水印文字字体</param>
+            <param name="WaterTextBrush">水印文字笔刷</param>
+            <param name="waterTextPoint">水印文字位置</param>
+            <param name="waterImage">水印图片（为 Null 表示不使用图片水印）</param>
+            <param name="waterImagePoint">水印图片位置</param>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.ImageUtility.AddWaterMark(System.Drawing.Image,System.Drawing.Imaging.ImageCodecInfo,System.String,System.Int32,System.String,System.Drawing.Font,System.Drawing.Brush,System.Drawing.Point)">
+            <summary>
+            图片加水印
+            </summary>
+            <param name="sourceImage">原始图片</param>
+            <param name="imageCodecInfo">原始图片编码解码器</param> 
+            <param name="savePath">图片文件存放地址，例Folder/File.jpg</param>
+            <param name="quality">质量（范围0-100）</param> 
+            <param name="waterText">水印文字（为 IsNullOrEmpty 表示不使用文字水印）</param>
+            <param name="waterTextFont">水印文字字体</param>
+            <param name="WaterTextBrush">水印文字笔刷</param>
+            <param name="waterTextPoint">水印文字位置</param>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.ImageUtility.AddWaterMark(System.Drawing.Image,System.Drawing.Imaging.ImageCodecInfo,System.String,System.Int32,System.Drawing.Image,System.Drawing.Point)">
+            <summary>
+            图片加水印
+            </summary>
+            <param name="sourceImage">原始图片</param>
+            <param name="imageCodecInfo">原始图片编码解码器</param> 
+            <param name="savePath">图片文件存放地址，例Folder/File.jpg</param>
+            <param name="quality">质量（范围0-100）</param> 
+            <param name="waterImage">水印图片（为 Null 表示不使用图片水印）</param>
+            <param name="waterImagePoint">水印图片位置</param>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.ImageUtility.Zoom(System.Drawing.Image,System.Drawing.Imaging.ImageCodecInfo,System.Drawing.Size,System.Int32,System.String,System.Boolean)">
+            <summary>
+            缩放图片
+            </summary>
+            <param name="sourceImage">原始图片</param>
+            <param name="imageCodecInfo">原始图片编码解码器</param>
+            <param name="targetSize">目标宽高</param>
+            <param name="quality">质量（范围0-100）</param>
+            <param name="savePath">图片文件存放地址，例Folder/File.jpg</param>
+            <param name="isSaveWhenSmall">小于目标时是否直接保存</param>
+        </member>
+        <member name="T:Eastupright.EnterpriseLibrary.Common.IniUtility">
+            <summary>
+            操作INI文件
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.IniUtility.Write(System.String,System.String,System.String,System.String)">
+            <summary>
+            写入
+            </summary>
+            <param name="path">INI文件</param>
+            <param name="section"></param>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.IniUtility.ReadToString(System.String,System.String,System.String)">
+            <summary>
+            读取
+            </summary>
+            <param name="path">INI文件</param>
+            <param name="section"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.IniUtility.ReadToByte(System.String,System.String,System.String)">
+            <summary>
+            读取
+            </summary>
+            <param name="path">INI文件</param>
+            <param name="section"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Eastupright.EnterpriseLibrary.Common.StringUtility.FolderString">
+            <summary>
+            系统文件夹
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.FolderString.GetWindowsDirectory(System.Text.StringBuilder,System.Int32)">
+            <summary>
+            获取Windows文件夹路径
+            </summary>
+            <param name="window">存储Windows文件夹的物理路径</param>
+            <param name="count">设置字符串的大小</param>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.FolderString.GetSystemDirectory(System.Text.StringBuilder,System.Int32)">
+            <summary>
+            获取System32文件夹路径
+            </summary>
+            <param name="system">存储System32文件夹的物理路径</param>
+            <param name="count">设置字符串的大小</param>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.StringUtility.FolderString.WindowsDirectory">
+            <summary>
+            Windows文件夹路径
+            </summary>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.StringUtility.FolderString.SystemDirectory">
+            <summary>
+            System32文件夹路径
+            </summary>
+        </member>
+        <member name="T:Eastupright.EnterpriseLibrary.Common.ListUtility">
+            <summary>
+            交集、并集、差集
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.ListUtility.IntersectWith``1(System.Collections.Generic.List{``0},System.Collections.Generic.List{``0})">
+            <summary>
+            交集
+            </summary>
+            <param name="list1"></param>
+            <param name="list2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.ListUtility.UnionWith``1(System.Collections.Generic.List{``0},System.Collections.Generic.List{``0})">
+            <summary>
+            并集
+            </summary>
+            <param name="list1"></param>
+            <param name="list2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.ListUtility.ExceptWith``1(System.Collections.Generic.List{``0},System.Collections.Generic.List{``0})">
+            <summary>
+            差集
+            </summary>
+            <param name="list1"></param>
+            <param name="list2"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Eastupright.EnterpriseLibrary.Common.RarUtility">
+            <summary>
+            WinRAR操作
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.RarUtility.Compress(System.String,System.String)">
+            <summary>
+            压缩
+            </summary>
+            <param name="sourcePath">待压缩</param>
+            <param name="savePath">压缩保存路径</param>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.RarUtility.DeCompress(System.String,System.String)">
+            <summary>
+            解压缩
+            </summary>
+            <param name="sourcePath">待解压文件</param>
+            <param name="savePath">解压后保存路径</param>
+        </member>
+        <member name="T:Eastupright.EnterpriseLibrary.Common.StringUtility.JavascriptString">
+            <summary>
+            JavaScript脚本
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.JavascriptString.Alert(System.String)">
+            <summary>
+            提示对话框：确定
+            </summary>
+            <param name="message">消息文字</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.JavascriptString.AlertAndRedirect(System.String,System.String)">
+            <summary>
+            提示对话框：确定并转到其他页面
+            </summary>
+            <param name="message">消息文字</param>
+            <param name="url">Url地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.JavascriptString.AlertAndClose(System.String)">
+            <summary>
+            提示对话框：确定并关闭窗口
+            </summary>
+            <param name="message">消息文字</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.JavascriptString.Confirm(System.String)">
+            <summary>
+            提示对话框：确定、取消
+            </summary>
+            <param name="message">消息文字</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.JavascriptString.OpenWindow(System.String,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            打开窗口
+            </summary>        
+            <param name="url">Url地址</param>
+            <param name="width">窗口宽度值</param>
+            <param name="height">窗口高度值</param>
+            <param name="menubar">菜单条yes/no</param>
+            <param name="toolbar">导航工具栏yes/no</param>
+            <param name="location">地址工具栏yes/no</param>
+            <param name="status">状态栏yes/no</param>
+            <param name="scrollbars">需要时使用滚动条yes/no</param>
+            <param name="resizable">调整手柄大小yes/no</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.JavascriptString.OpenWindowFullScreen(System.String,System.Boolean)">
+            <summary>
+            打开全屏窗口，“无滚动条：body scroll="no"；
+            步骤一、把网址添加到受信任站点里面；
+            步骤二、最好设置一下受信任站点的安全级别：
+            (1)将“允许由脚本初始化的窗口，不受大小和位置限制”启用，
+            (2)再将“使用弹出窗口阻止程序”禁用”。
+            </summary>
+            <param name="url">Url地址。</param>
+            <param name="isClose">是否关闭父页面。</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.JavascriptString.ShowModalDialog(System.String,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            打开模态窗口（总在最上面）
+            </summary>
+            <param name="url">Url地址</param>
+            <param name="width">窗口宽度值</param>
+            <param name="height">窗口高度值</param>
+            <param name="isClose">关闭此Web模态窗口时，是否同时关闭父页面</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.JavascriptString.CloseWindow">
+            <summary>
+            关闭页面
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.JavascriptString.LocationTo(System.String,System.String)">
+            <summary>
+            定位网页
+            </summary>
+            <param name="window">top 、self</param>
+            <param name="url">Url地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.JavascriptString.HistoryTo(System.Int32)">
+            <summary>
+            后退、前进网页历史记录
+            </summary>
+            <param name="pageCount">
+            前进：+Number；
+            后退：-Number；
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.JavascriptString.AddFavorite(System.String,System.String)">
+            <summary>
+            添加到收藏夹
+            </summary>
+            <param name="url">Url地址</param>
+            <param name="favoriteName">在收藏夹中的名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.JavascriptString.SetHomePage(System.String)">
+            <summary>
+            设为主页
+            </summary>
+            <param name="url">Url地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.JavascriptString.Print">
+            <summary>
+            打印
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.JavascriptString.PrintWithWebBrowser(System.String)">
+            <summary>
+            使用WebBrowser组件打印（需提前在页面中引入WebBrowser组件）
+            </summary>
+            <param name="param">
+            另存为：4，1；
+            打印：6，1；
+            直接打印：6，6；
+            打印预览：7，1；
+            页面设置：8，1；
+            全选：17，1；
+            刷新：22，1；
+            关闭：45，1；
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString">
+            <summary>
+            正则表达式
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.IdCard">
+            <summary>
+            身份证号码
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.Phone">
+            <summary>
+            电话号码
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.PostCode">
+            <summary>
+            邮政编码
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.Email">
+            <summary>
+            Email地址
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.Url">
+            <summary>
+            HttpUrl网址
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.Chinese">
+            <summary>
+            汉字
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.Number">
+            <summary>
+            数字
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.NumberLengthAfterDot(System.Int32)">
+            <summary>
+            有N位小数的正实数
+            </summary>
+            <param name="Length">小数点后的长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.NumberLengthAfterDotMtoN(System.Int32,System.Int32)">
+            <summary>
+            有M到N位小数的正实数
+            </summary>
+            <param name="MinLength">小数位数最小长度</param>
+            <param name="MaxLength">小数位数最大长度</param>
+            <returns></returns>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.NumberIntegerPositive">
+            <summary>
+            正整数
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.NumberIntegerNegative">
+            <summary>
+            负整数
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.NumberLengthMtoN(System.Int32,System.Int32)">
+            <summary>
+            数字长度在M到N位之间
+            </summary>
+            <param name="MinLength">数字位数至少长度</param>
+            <param name="MaxLength">数字位数至多长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.NumberLength(System.Int32)">
+            <summary>
+            数字长度至少是N位
+            </summary>
+            <param name="MinLength">数字位数至少长度</param>
+            <returns></returns>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.NumberStartZero">
+            <summary>
+            零开头的数字字符串
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.Length(System.Int32)">
+            <summary>
+            长度X
+            </summary>
+            <param name="Lenth">字符串长度</param>
+            <returns></returns>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.KDD">
+            <summary>
+            大小写字母
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.KDDNum">
+            <summary>
+            大小写字母、数字
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.KDDNumUnderline">
+            <summary>
+            英文字母、数字、下划线
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.KDDLower">
+            <summary>
+            由26个小写英文字母
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.KDDUpper">
+            <summary>
+            26个大写英文字母
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.DateDay">
+            <summary>
+            月的31天，正确格式为（"01"～"09"和"1"～"31"）
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.RegexString.DateMonth">
+            <summary>
+            年的12个月，正确格式为（"01"～"09"和"1"～"12"）
+            </summary>
+        </member>
+        <member name="T:Eastupright.EnterpriseLibrary.Common.StringUtility.SerialString">
+            <summary>
+            序列号
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Common.StringUtility.SerialString.DiskVolume(System.String)">
+            <summary>
+            硬盘的卷标号
+            </summary>
+            <param name="diskID">C、D、E</param>
+            <returns></returns>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.StringUtility.SerialString.System">
+            <summary>
+            操作系统序列号
+            </summary>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.StringUtility.SerialString.Cpu">
+            <summary>
+            CPU的序列号
+            </summary>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.StringUtility.SerialString.Disk">
+            <summary>
+            硬盘的卷标号
+            </summary>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.StringUtility.SerialString.NetworkAdapter">
+            <summary>
+            网卡序列号
+            </summary>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.StringUtility.SerialString.Board">
+            <summary>
+            主板序列号
+            </summary>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.StringUtility.SerialString.DriverInfo">
+            <summary>
+            本地驱动器信息
+            </summary>
+        </member>
+        <member name="P:Eastupright.EnterpriseLibrary.Common.StringUtility.SerialString.GroupName">
+            <summary>
+            组名称
+            </summary>
+        </member>
+        <member name="T:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString">
+            <summary>
+            Windows Run 文件名
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Ncpa">
+            <summary>
+            Ncpa.cpl 网络连接
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Main">
+            <summary>
+            Main.cpl 鼠标
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Mmsys">
+            <summary>
+            Mmsys.cpl 声音
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Sysdm">
+            <summary>
+            Sysdm.cpl 系统
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Desk">
+            <summary>
+            Desk.cpl 显示
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Nusrmgr">
+            <summary>
+            Nusrmgr.cpl 账户
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Inetcpl">
+            <summary>
+            Inetcpl.cpl Internet属性
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Appwiz">
+            <summary>
+            Appwiz.cpl 添加删除程序
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Access">
+            <summary>
+            Access.cpl 辅助功能
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Services">
+            <summary>
+            Services.msc 本地服务设置
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.FsMgmt">
+            <summary>
+            FsMgmt.msc 共享文件夹管理器
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.DiskMgmt">
+            <summary>
+            DiskMgmt.msc 磁盘管理实用程序
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Dfrg">
+            <summary>
+            Dfrg.msc 磁盘碎片整理程序
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.CompMgmt">
+            <summary>
+            CompMgmt.msc 计算机管理
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.DevMgmt">
+            <summary>
+            DevMgmt.msc 设备管理器
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.LUsrMgr">
+            <summary>
+            LUsrMgr.nsc 本机用户和组
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Calc">
+            <summary>
+            Calc 计算器
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.NotePad">
+            <summary>
+            NotePad 记事本
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Write">
+            <summary>
+            Write 写字板
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.MsPaint">
+            <summary>
+            MsPaint 画图板
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Control">
+            <summary>
+            Control 控制面板
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Clipbrd">
+            <summary>
+            Clipbrd 剪贴板查看器
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.INetMgr">
+            <summary>
+            INetMgr IIS管理器
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.OdbcAd32">
+            <summary>
+            OdbcAd32 数据源管理器
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.TaskMgr">
+            <summary>
+            TaskMgr 任务管理器
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.WinMsd">
+            <summary>
+            WinMsd 系统信息
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.WinVer">
+            <summary>
+            WinVer 系统版本
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.TourStart">
+            <summary>
+            TourStart XP简介
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.TsShutDown">
+            <summary>
+            TsShutDown 60秒倒计时关机
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.RonOnce">
+            <summary>
+            RonOnce －p 15秒关机
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.LogOff">
+            <summary>
+            LogOff 注销
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.MMC">
+            <summary>
+            MMC 打开控制台
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.MsConfig">
+            <summary>
+            MsConfig 启动
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.SysEdit">
+            <summary>
+            SysEdit 系统配置编辑器
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.RegEdit">
+            <summary>
+            RegEdit 注册表
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.GpEdit">
+            <summary>
+            GpEdit 组策略
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.ChkDsk">
+            <summary>
+            ChkDsk 磁盘检查
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.CleanMgr">
+            <summary>
+            CleanMgr 垃圾整理
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.WinChat">
+            <summary>
+            WinChat 自带局域网聊天
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Mplayer2">
+            <summary>
+            Mplayer2 媒体播放机
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.SndRec32">
+            <summary>
+            SndRec32 录音机
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.SndVol32">
+            <summary>
+            SndVol32 音量控制
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.EudcEdit">
+            <summary>
+            EudcEdit 造字
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Magnify">
+            <summary>
+            Magnify 放大镜
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Osk">
+            <summary>
+            Osk 打开屏幕键盘
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.UtilMan">
+            <summary>
+            UtilMan 辅助工具管理器
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.Mstsc">
+            <summary>
+            Mstsc 远程桌面连接
+            </summary>
+        </member>
+        <member name="F:Eastupright.EnterpriseLibrary.Common.StringUtility.CommandString.WiAacMgr">
+            <summary>
+            WiAacMgr 扫描仪和照相机向导
+            </summary>
+        </member>
+    </members>
+</doc>
