@@ -1,0 +1,9 @@
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\Web2.UI\bin\Web2.UI.dll
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\Web2.UI\bin\Web2.UI.pdb
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\Web2.UI\bin\CSCInventarios.BL.dll
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\Web2.UI\bin\CSCInventarios.EL.dll
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\Web2.UI\bin\CSCInventarios.BL.pdb
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\Web2.UI\bin\CSCInventarios.EL.pdb
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\Web2.UI\obj\Debug\Web2.UI.csprojResolveAssemblyReference.cache
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\Web2.UI\obj\Debug\Web2.UI.dll
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\Web2.UI\obj\Debug\Web2.UI.pdb
