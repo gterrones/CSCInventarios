@@ -15,5 +15,6 @@ namespace CSCInventarios.DAL
         void CrearUsuario(Usuario usuario);
         void EliminarUsuario(int usuario_id);
         void modificarUsuario(Usuario usuario);
+
     }
 }

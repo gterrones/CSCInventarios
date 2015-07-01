@@ -14,6 +14,5 @@ namespace CSCInventarios.DAL
         void CrearEstacion (Estacion estacion);
         void EliminarEstacion(int estacion_id);
         void modificarEstacion(Estacion estacion);
-
     }
 }

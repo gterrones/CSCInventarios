@@ -81,7 +81,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cnx.cs" />
+    <Compile Include="DetalleSolicitudDAL.cs" />
     <Compile Include="EstacionDAL.cs" />
+    <Compile Include="DetalleRequerimientoDAL.cs" />
+    <Compile Include="IDetalleRequerimientoDAL.cs" />
+    <Compile Include="IDetalleSolicitudDAL.cs" />
     <Compile Include="IEstacionDAL.cs" />
     <Compile Include="IInventarioDAL.cs" />
     <Compile Include="IMaterialDAL.cs" />
