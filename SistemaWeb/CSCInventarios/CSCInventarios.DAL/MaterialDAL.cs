@@ -2,7 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 using CSCInventarios.EL;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
+using System.Data;
+using System.Data.Common;
+
 
 namespace CSCInventarios.DAL
 {
@@ -11,32 +17,59 @@ namespace CSCInventarios.DAL
 
         public List<Material> LeerTodosLosMateriales()
         {
-            throw new NotImplementedException();
+            var query = DataBase.ExecuteSprocAccessor<Material>("LeerTodosLosMateriales");
+            return query.ToList(); 
         }
 
         public Material LeerMaterialPorMaterialId(int material_id)
         {
-            throw new NotImplementedException();
+            var query = DataBase.ExecuteSprocAccessor<Material>("GetFromClienteByRucDni", material_id);
+            return query.SingleOrDefault(); 
         }
 
         public List<Material> LeerMaterialPorCriterio(string criterio)
         {
-            throw new NotImplementedException();
+            var query = DataBase.ExecuteSprocAccessor<Material>("LeerMaterialPorCriterio", criterio);
+
+            return query.ToList(); 
         }
 
         public void CrearMaterial(Material material)
         {
-            throw new NotImplementedException();
+            DbCommand command = DataBase.GetStoredProcCommand("CrearMaterial");
+
+            DataBase.AddInParameter(command, "material_id", DbType.Int32, material.material_id);
+            DataBase.AddInParameter(command, "material_nombre", DbType.String, material.material_nombre);
+            DataBase.AddInParameter(command, "material_modelo", DbType.String, material.material_modelo);
+            DataBase.AddInParameter(command, "material_cantidad", DbType.Int32, material.material_cantidad);
+            DataBase.AddInParameter(command, "material_observacion", DbType.String, material.material_observacion);
+            DataBase.AddInParameter(command, "material_eliminado", DbType.Boolean, material.material_eliminado);
+
+            DataBase.ExecuteNonQuery(command);  
         }
 
         public void EliminarMaterial(int material_id)
         {
-            throw new NotImplementedException();
+            DbCommand command = DataBase.GetStoredProcCommand("EliminarMaterial");
+
+            DataBase.AddInParameter(command, "material_id", DbType.Int32, material_id);
+            DataBase.AddInParameter(command, "material_eliminado", DbType.Boolean, 1);
+
+            DataBase.ExecuteNonQuery(command);  
         }
 
         public void modificarMaterial(Material material)
         {
-            throw new NotImplementedException();
+            DbCommand command = DataBase.GetStoredProcCommand("modificarMaterial");
+
+            DataBase.AddInParameter(command, "material_id", DbType.Int32, material.material_id);
+            DataBase.AddInParameter(command, "material_nombre", DbType.String, material.material_nombre);
+            DataBase.AddInParameter(command, "material_modelo", DbType.String, material.material_modelo);
+            DataBase.AddInParameter(command, "material_cantidad", DbType.Int32, material.material_cantidad);
+            DataBase.AddInParameter(command, "material_observacion", DbType.String, material.material_observacion);
+            DataBase.AddInParameter(command, "material_eliminado", DbType.Boolean, material.material_eliminado);
+
+            DataBase.ExecuteNonQuery(command);  
         }
     }
 }
