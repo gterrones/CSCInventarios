@@ -11,6 +11,10 @@ namespace CSCInventarios.BL
 {
     public class DetalleSolicitudBL:IDetalleSolicitudBL
     {
+        
+        [Dependency]
+        public IDetalleSolicitudBL detalleSolicitudBL { get; set; }
+
         public void CrearDetalleSolicitud(EL.DetalleSolicitud detalleSolicitud)
         {
             throw new NotImplementedException();

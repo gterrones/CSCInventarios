@@ -13,5 +13,8 @@ namespace CSCInventarios.EL
 	    public int ds_cantidad_solicitada{get;set;}
 	    public int ds_cantidad_asignada{get;set;}
         public int ds_cantidad_aceptada { get; set; }
+
+        public Material material { get; set; }
+
     }
 }
