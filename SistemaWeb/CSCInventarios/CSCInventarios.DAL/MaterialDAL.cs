@@ -41,6 +41,7 @@ namespace CSCInventarios.DAL
             DataBase.AddInParameter(command, "material_id", DbType.Int32, material.material_id);
             DataBase.AddInParameter(command, "material_nombre", DbType.String, material.material_nombre);
             DataBase.AddInParameter(command, "material_modelo", DbType.String, material.material_modelo);
+            DataBase.AddInParameter(command, "material_marca", DbType.String, material.material_marca);
             DataBase.AddInParameter(command, "material_cantidad", DbType.Int32, material.material_cantidad);
             DataBase.AddInParameter(command, "material_observacion", DbType.String, material.material_observacion);
             DataBase.AddInParameter(command, "material_eliminado", DbType.Boolean, material.material_eliminado);

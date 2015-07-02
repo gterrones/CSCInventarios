@@ -12,7 +12,7 @@ namespace CSCInventarios.EL
         public int sl_id{get;set;}
 	    public int usuario_id{get;set;}
 	    public int estacion_id{get;set;}
-	    public DateTime sl_feha{get;set;}
+	    public DateTime sl_fecha{get;set;}
 	    public Boolean sl_recepcion{get;set;}
 	    public Boolean sl_asignacion{get;set;}
         public Boolean sl_atencion{get;set;}
