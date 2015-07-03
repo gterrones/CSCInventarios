@@ -53,7 +53,7 @@ namespace CSCInventarios.DAL
         {
             var rowMapper = MapBuilder<DetalleSolicitud>
                 .MapAllProperties()
-                            //.DoNotMap(dp => dp.)
+                //.DoNotMap(dp => dp.)
                 .Map(m => m.material)
                 .WithFunc(m => materialDAL.LeerMaterialPorMaterialId(m.GetInt32(m.GetOrdinal("material_id"))))
                 .Build();

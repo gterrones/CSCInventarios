@@ -67,6 +67,8 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="AsignarMaterial.aspx" />
+    <Content Include="SolicitarMaterial.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -117,6 +119,13 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AsignarMaterial.aspx.cs">
+      <DependentUpon>AsignarMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AsignarMaterial.aspx.designer.cs">
+      <DependentUpon>AsignarMaterial.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -134,6 +143,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitarMaterial.aspx.cs">
+      <DependentUpon>SolicitarMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitarMaterial.aspx.designer.cs">
+      <DependentUpon>SolicitarMaterial.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

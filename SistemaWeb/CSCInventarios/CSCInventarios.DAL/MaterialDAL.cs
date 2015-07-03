@@ -8,30 +8,40 @@ using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using System.Data;
 using System.Data.Common;
+using Microsoft.Practices.Unity;
 
 
 namespace CSCInventarios.DAL
 {
     public class MaterialDAL:cnx , IMaterialDAL
     {
+        [Dependency]
+        public IMaterialDAL materialDAL { get; set; }
+
+        public MaterialDAL() { }
+
 
         public List<Material> LeerTodosLosMateriales()
         {
-            var query = DataBase.ExecuteSprocAccessor<Material>("LeerTodosLosMateriales");
-            return query.ToList(); 
+            var query = DataBase.ExecuteSprocAccessor<Material>("LeerTodosLosMateriales");            
+            var material = query.ToList();
+            material.Insert(0, new Material() { material_id = 0, material_nombre= "[ Elegir Material ]" });
+
+            return material;
         }
 
         public Material LeerMaterialPorMaterialId(int material_id)
         {
-            var query = DataBase.ExecuteSprocAccessor<Material>("GetFromClienteByRucDni", material_id);
-            return query.SingleOrDefault(); 
+            var query = DataBase.ExecuteSprocAccessor<Material>("LeerMaterialPorMaterialId", material_id);
+            return query.SingleOrDefault();
         }
 
         public List<Material> LeerMaterialPorCriterio(string criterio)
         {
             var query = DataBase.ExecuteSprocAccessor<Material>("LeerMaterialPorCriterio", criterio);
+            return query.ToList();
 
-            return query.ToList(); 
+
         }
 
         public void CrearMaterial(Material material)

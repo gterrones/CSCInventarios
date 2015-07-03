@@ -8,6 +8,12 @@
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            font-family: Tahoma;
+        }
+    </style>
 </head>
 <body>
     <form runat="server">
@@ -15,7 +21,7 @@
         <div class="header">
             <div class="title">
                 <h1>
-                    Mi aplicación ASP.NET
+                    CSC<span class="style1"> Inventarios </span>
                 </h1>
             </div>
             <div class="loginDisplay">
@@ -34,6 +40,10 @@
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Página principal"/>
                         <asp:MenuItem NavigateUrl="~/About.aspx" Text="Acerca de"/>
+                        <asp:MenuItem NavigateUrl="~/SolicitarMaterial.aspx" Text="Solicitar Material" 
+                            Value="Solicitar Material"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/AsignarMaterial.aspx" Text="Asignar Material" 
+                            Value="Asignar Material"></asp:MenuItem>
                     </Items>
                 </asp:Menu>
             </div>

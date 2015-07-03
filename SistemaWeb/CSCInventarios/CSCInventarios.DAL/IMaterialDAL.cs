@@ -9,11 +9,11 @@ namespace CSCInventarios.DAL
 {
     public interface IMaterialDAL
     {
-        List<Material> LeerTodosLosMateriales();
-        Material LeerMaterialPorMaterialId(int material_id);
-        List<Material> LeerMaterialPorCriterio(string criterio);
-        void CrearMaterial(Material material);
-        void EliminarMaterial(int material_id);
-        void modificarMaterial(Material material);
+        List<Material> LeerTodosLosMateriales();//procedimiento PROBADO
+        Material LeerMaterialPorMaterialId(int material_id);//procedimiento PROBADO
+        List<Material> LeerMaterialPorCriterio(string criterio);//procedimiento PROBADO
+        void CrearMaterial(Material material);//procedimiento PROBADO
+        void EliminarMaterial(int material_id);//procedimiento PROBADO
+        void modificarMaterial(Material material);//procedimiento PROBADO
     }
 }
