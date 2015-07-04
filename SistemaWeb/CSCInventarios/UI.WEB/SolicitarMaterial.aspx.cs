@@ -27,6 +27,12 @@ namespace UI.WEB
         private const string VARMATERIAL = "material";
         private const string VARESTACION = "estacion";
 
+        public SolicitarMaterial() {
+            materialBl = new MaterialBL();
+            solicitudBL = new SolicitudBL();
+            usuarioBL = new UsuarioBL();
+            estacionBL = new EstacionBL();
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -82,9 +88,10 @@ namespace UI.WEB
 
         protected void gvMateriales_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var material_id = Int32.Parse(gvMateriales.SelectedValue.ToString());
-            
-            var material = materialBl.LeerMaterialPorMaterialId(material_id);
+            GridViewRow row = gvMateriales.SelectedRow;
+            var mat_id = int.Parse(row.Cells[1].Text);
+                
+            var material = materialBl.LeerMaterialPorMaterialId(mat_id);
 
             txtMatNom.Text = material.material_nombre;
             txtMatMarca.Text = material.material_marca;
@@ -98,26 +105,25 @@ namespace UI.WEB
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            var producto = Cache.Get(VARMATERIAL) as Material;
-            var cantidad = Int32.Parse(txtMatCantidad.Text);
+            var material = Cache.Get(VARMATERIAL) as Material;
+            var cantidad_material = int.Parse(txtMatCantidad.Text);
 
-
-            DetalleSolicitud newDetalle = new DetalleSolicitud()
+            DetalleSolicitud detalleSolicitud = new DetalleSolicitud()
             {
-                Producto = producto,
-                ProductoId = producto.Id,
-                Precio = precio,
-                Cantidad = cantidad
+                material = material,
+                material_id = material.material_id,
+                ds_cantidad_solicitada = cantidad_material,
             };
 
-            var pedido = Cache.Get(VARPEDIDO) as Pedido;
-
-            pedido.DetallePedido.Add(newDetalle);
-
-            pedido.Total = pedido.DetallePedido.Sum(m => m.Monto);
-
-            PedidoDataBind(pedido);
+            var solicitud = Cache.Get(VARSOLICITUD) as Solicitud;
+            //solicitud.DetalleSolicitud.Add(detalleSolicitud);
+            //SolicitudDataBind(solicitud);
+           
+            gvDetalleSolicitud.DataSource = solicitud;
+            gvDetalleSolicitud.Visible = true;
+            gvDetalleSolicitud.DataBind();
         }
+
 
 
     }

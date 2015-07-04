@@ -49,15 +49,6 @@ namespace UI.WEB {
         protected global::System.Web.UI.WebControls.ObjectDataSource odsLeerTodasLasEstaciones;
         
         /// <summary>
-        /// Control lbBuscarMaterial.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbBuscarMaterial;
-        
-        /// <summary>
         /// Control txtMatNom.
         /// </summary>
         /// <remarks>
@@ -155,15 +146,6 @@ namespace UI.WEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource odsLeerMaterialPorCritero;
-        
-        /// <summary>
-        /// Control btnCerrarBuscMaterial.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCerrarBuscMaterial;
         
         /// <summary>
         /// Control pnlDetalleSolictud.

@@ -17,10 +17,6 @@
     {
         width: 128px;
     }
-    .style6
-    {
-        width: 33px;
-    }
     .style7
     {
         width: 60px;
@@ -28,30 +24,33 @@
     }
     .style8
     {
-        width: 33px;
+        width: 44px;
         font-size: medium;
-    }
-    .style9
-    {
-        width: 45px;
     }
     .style10
     {
-        width: 45px;
+        width: 97px;
         font-size: medium;
-    }
-    .style11
-    {
-        font-size: medium;
-        width: 59px;
-    }
-    .style13
-    {
-        width: 59px;
     }
         .style14
         {
             font-size: medium;
+        }
+        .style15
+        {
+            width: 76px;
+        }
+        .style18
+        {
+            width: 97px;
+        }
+        .style19
+        {
+            width: 44px;
+        }
+        .style20
+        {
+            width: 124px;
         }
     </style>
 </asp:Content>
@@ -62,31 +61,27 @@
         <tr>
             <td class="style4">
                 &nbsp;</td>
+            <td class="style15">
+                &nbsp;</td>
+            <td class="style19">
+                &nbsp;</td>
+            <td class="style20">
+                &nbsp;</td>
+            <td class="style18">
+                &nbsp;</td>
             <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style9">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style13">
-                &nbsp;</td>
-            <td>
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="style7">
                 <strong>IdSolicitud</strong></td>
-            <td class="style5">
-                <asp:TextBox ID="txtSolicId" runat="server"></asp:TextBox>
+            <td class="style15">
+                <asp:TextBox ID="txtSolicId" runat="server" Width="40px">0</asp:TextBox>
             </td>
             <td class="style8">
-                <strong>Fecha</strong></td>
-            <td class="style5">
-                <asp:TextBox ID="txtSolicFecha" runat="server"></asp:TextBox>
+                <strong style="text-align: right">Fecha</strong></td>
+            <td class="style20">
+                <asp:TextBox ID="txtSolicFecha" runat="server" Height="22px" Width="95px">03/07/2015</asp:TextBox>
             </td>
             <td class="style10">
                 <strong>Estacion</strong></td>
@@ -99,27 +94,19 @@
                     SelectMethod="LeerTodasLasEstaciones" TypeName="CSCInventarios.BL.EstacionBL">
                 </asp:ObjectDataSource>
             </td>
-            <td class="style11">
-                </td>
-            <td>
-                &nbsp;</td>
         </tr>
         <tr>
             <td class="style4">
                 &nbsp;</td>
+            <td class="style15">
+                &nbsp;</td>
+            <td class="style19">
+                &nbsp;</td>
+            <td class="style20">
+                &nbsp;</td>
+            <td class="style18">
+                &nbsp;</td>
             <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style9">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style13">
-                &nbsp;</td>
-            <td>
                 &nbsp;</td>
         </tr>
 </table>
@@ -131,15 +118,7 @@
                 -<fieldset>
         <legend>Materiales</legend>
 
-         <asp:LinkButton 
-            ID="lbBuscarMaterial" 
-            runat="server" 
-            BackColor="White" 
-             BorderColor="#000066" 
-             BorderStyle="Solid" onclick="lbBuscarMaterial_Click">Buscar</asp:LinkButton>
-
-         <span class="style14"><strong>
-         <br />
+                    <span class="style14"><strong>
          Nombre</strong></span>
          <asp:TextBox ID="txtMatNom" runat="server"></asp:TextBox>
 &nbsp; <span class="style14"><strong>Marca</strong></span>
@@ -212,8 +191,6 @@
 
                        
         <br />
-         <asp:Button ID="btnCerrarBuscMaterial" runat="server" Text="Cerrar" />
-         <br />  
     </asp:Panel>
   
             </td>
