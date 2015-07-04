@@ -52,11 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DetalleRequerimientoBL.cs" />
-    <Compile Include="DetalleSolicitudBL.cs" />
     <Compile Include="EstacionBL.cs" />
-    <Compile Include="IDetalleRequerimientoBL.cs" />
-    <Compile Include="IDetalleSolicitudBL.cs" />
     <Compile Include="IEstacionBL.cs" />
     <Compile Include="IMaterialBL.cs" />
     <Compile Include="InventarioBL.cs" />

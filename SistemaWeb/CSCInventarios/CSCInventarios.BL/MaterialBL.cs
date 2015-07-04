@@ -13,7 +13,10 @@ namespace CSCInventarios.BL
     {
         [Dependency]
         public IMaterialDAL materialDAL { get; set;}
-        public MaterialBL(){}
+        public MaterialBL(){
+
+            materialDAL = new MaterialDAL();
+        }
 
         public List<Material> LeerTodosLosMateriales()
         {

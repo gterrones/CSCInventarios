@@ -11,9 +11,14 @@ namespace CSCInventarios.BL
 {
     public class SolicitudBL:ISolicitudBL
     {
-        public void CrearSolicitud(EL.Solicitud solicitud)
+        [Dependency]
+        ISolicitudDAL solicitudDAL { get; set; }
+
+        public SolicitudBL() { }
+
+        public void CrearSolicitud(Solicitud solicitud)
         {
-            throw new NotImplementedException();
+            solicitudDAL.CrearSolicitud(solicitud);
         }
 
         public void EliminarSolicitud(int sl_id)
@@ -21,24 +26,24 @@ namespace CSCInventarios.BL
             throw new NotImplementedException();
         }
 
-        public EL.Solicitud LeerSolicitudPorSlId(int sl_id)
+        public Solicitud LeerSolicitudPorSlId(int sl_id)
         {
-            throw new NotImplementedException();
+            return solicitudDAL.LeerSolicitudPorSlId(sl_id);
         }
 
-        public List<EL.Solicitud> LeerSolicitudPorUsuarioId(int usuario_id)
+        public List<Solicitud> LeerSolicitudPorUsuarioId(int usuario_id)
         {
-            throw new NotImplementedException();
+            return solicitudDAL.LeerSolicitudPorUsuarioId(usuario_id);
         }
 
-        public List<EL.Solicitud> LeerSolicitudPorEstacionId(int estacion_id)
+        public List<Solicitud> LeerSolicitudPorEstacionId(int estacion_id)
         {
-            throw new NotImplementedException();
+            return solicitudDAL.LeerSolicitudPorEstacionId(estacion_id);
         }
 
-        public List<EL.Solicitud> LeerSolicitudEntreFechas(DateTime fechaInicio, DateTime fechaFin)
+        public List<Solicitud> LeerSolicitudEntreFechas(DateTime fechaInicio, DateTime fechaFin)
         {
-            throw new NotImplementedException();
+            return solicitudDAL.LeerSolicitudEntreFechas(fechaInicio,fechaFin);
         }
 
         public List<EL.Solicitud> LeerSolicitudesRecepcionadas(bool sl_recepcion)

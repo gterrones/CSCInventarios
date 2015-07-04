@@ -16,7 +16,10 @@ namespace CSCInventarios.DAL
         public List<Estacion> LeerTodasLasEstaciones()
         {
             var query = DataBase.ExecuteSprocAccessor<Estacion>("LeerTodasLasEstaciones");
-            return query.ToList(); 
+            var estacion = query.ToList();
+            estacion.Insert(0, new Estacion() { estacion_id = 0, estacion_nombre = "[ Elegir Estacion ]" });
+            return estacion;
+
         }
 
         public Estacion LeerEstacionesPorEstacionId(int estacion_id)

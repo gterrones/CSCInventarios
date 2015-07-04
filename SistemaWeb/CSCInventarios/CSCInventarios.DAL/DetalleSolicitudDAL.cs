@@ -51,16 +51,7 @@ namespace CSCInventarios.DAL
 
         public List<DetalleSolicitud> LeerDetalleSolicitudPorDsId(int ds_id)
         {
-            var rowMapper = MapBuilder<DetalleSolicitud>
-                .MapAllProperties()
-                //.DoNotMap(dp => dp.)
-                .Map(m => m.material)
-                .WithFunc(m => materialDAL.LeerMaterialPorMaterialId(m.GetInt32(m.GetOrdinal("material_id"))))
-                .Build();
-
-            var query = DataBase.ExecuteSprocAccessor<DetalleSolicitud>("LeerSolicitudPorSlId", rowMapper, ds_id);
-
-            return query.ToList();
+            throw new NotImplementedException();
         }
 
         public List<DetalleSolicitud> LeerDetalleSolicitudPorMaterialId(int material_id)
@@ -70,7 +61,15 @@ namespace CSCInventarios.DAL
 
         public List<DetalleSolicitud> LeerDetalleSolicitudPorSlId(int sl_id)
         {
-            throw new NotImplementedException();
+            var rowMapper = MapBuilder<DetalleSolicitud>
+                .MapAllProperties()
+                //.DoNotMap(m => m.)
+                .Map(m => m.material)
+                .WithFunc(m => materialDAL.LeerMaterialPorMaterialId(m.GetInt32(m.GetOrdinal("material_id"))))
+                .Build();
+            var query = DataBase.ExecuteSprocAccessor<DetalleSolicitud>("LeerDetalleSolicitudPorSlId", rowMapper, sl_id);
+
+            return query.ToList();
         }
 
         public List<DetalleSolicitud> LeerTodosLosDetalleSolicitud()

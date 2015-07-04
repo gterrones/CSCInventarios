@@ -15,7 +15,10 @@ namespace CSCInventarios.BL
         [Dependency]
         public IEstacionDAL estacionDAL { get; set; }
 
-        public EstacionBL() { }
+        public EstacionBL() {
+
+            estacionDAL = new EstacionDAL();
+        }
 
         public List<Estacion> LeerTodasLasEstaciones()
         {

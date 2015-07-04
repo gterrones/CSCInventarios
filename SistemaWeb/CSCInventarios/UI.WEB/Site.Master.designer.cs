@@ -40,6 +40,15 @@ namespace UI.WEB {
         protected global::System.Web.UI.WebControls.Menu NavigationMenu;
         
         /// <summary>
+        /// Control Sitemap.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SiteMapDataSource Sitemap;
+        
+        /// <summary>
         /// Control MainContent.
         /// </summary>
         /// <remarks>

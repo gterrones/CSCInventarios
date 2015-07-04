@@ -14,5 +14,10 @@ namespace CSCInventarios.EL
 	    public int material_cantidad{get; set;}
         public string material_observacion { get; set; }
         public Boolean material_eliminado { get; set; }
+
+        public override string ToString()
+        {
+            return material_nombre;
+        }
     }
 }

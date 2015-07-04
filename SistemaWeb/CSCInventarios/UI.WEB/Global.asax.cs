@@ -4,22 +4,26 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using Microsoft.Practices.Unity;
 
 namespace UI.WEB
 {
-    public class Global : System.Web.HttpApplication
+    public class Global : System.Web.HttpApplication,IInjector
     {
+        public static IUnityContainer InjectorContariner { get; set; }
 
         void Application_Start(object sender, EventArgs e)
         {
             // Código que se ejecuta al iniciarse la aplicación
-
+            IUnityContainer container = new UnityContainer();
+            InjectorContariner = container;
         }
 
         void Application_End(object sender, EventArgs e)
         {
             //  Código que se ejecuta cuando se cierra la aplicación
-
+            IUnityContainer container = new UnityContainer();
+            InjectorContariner = container;
         }
 
         void Application_Error(object sender, EventArgs e)
@@ -42,6 +46,9 @@ namespace UI.WEB
             // o SQLServer, el evento no se genera.
 
         }
-
+        IUnityContainer IInjector.InjectorContariner
+        {
+            get { return InjectorContariner; }
+        }
     }
 }

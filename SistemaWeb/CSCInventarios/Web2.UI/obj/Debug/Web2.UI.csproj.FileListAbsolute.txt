@@ -22,3 +22,4 @@ C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\Web2.
 C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\Web2.UI\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
 C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\Web2.UI\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
 C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\Web2.UI\bin\Microsoft.Practices.Unity.Interception.xml
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\Web2.UI\bin\AjaxControlToolkit.dll
