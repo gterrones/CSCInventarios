@@ -49,6 +49,33 @@ namespace UI.WEB {
         protected global::System.Web.UI.WebControls.ObjectDataSource odsLeerTodasLasEstaciones;
         
         /// <summary>
+        /// Control pnlDetalleSolictud.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlDetalleSolictud;
+        
+        /// <summary>
+        /// Control gvDetalleSolicitud.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvDetalleSolicitud;
+        
+        /// <summary>
+        /// Control btnRegistrarSolicitud.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRegistrarSolicitud;
+        
+        /// <summary>
         /// Control txtMatNom.
         /// </summary>
         /// <remarks>
@@ -146,32 +173,5 @@ namespace UI.WEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource odsLeerMaterialPorCritero;
-        
-        /// <summary>
-        /// Control pnlDetalleSolictud.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlDetalleSolictud;
-        
-        /// <summary>
-        /// Control gvDetalleSolicitud.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvDetalleSolicitud;
-        
-        /// <summary>
-        /// Control btnRegistrarSolicitud.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegistrarSolicitud;
     }
 }

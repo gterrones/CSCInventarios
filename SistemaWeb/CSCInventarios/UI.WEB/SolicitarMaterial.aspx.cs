@@ -27,11 +27,13 @@ namespace UI.WEB
         private const string VARMATERIAL = "material";
         private const string VARESTACION = "estacion";
 
+        Solicitud solicitud;
         public SolicitarMaterial() {
             materialBl = new MaterialBL();
             solicitudBL = new SolicitudBL();
             usuarioBL = new UsuarioBL();
             estacionBL = new EstacionBL();
+            solicitud = new Solicitud();
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -103,6 +105,8 @@ namespace UI.WEB
             Cache.Insert(VARMATERIAL, material);  
         }
 
+        
+
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             var material = Cache.Get(VARMATERIAL) as Material;
@@ -115,12 +119,11 @@ namespace UI.WEB
                 ds_cantidad_solicitada = cantidad_material,
             };
 
-            var solicitud = Cache.Get(VARSOLICITUD) as Solicitud;
-            //solicitud.DetalleSolicitud.Add(detalleSolicitud);
+            solicitud = Cache.Get(VARSOLICITUD) as Solicitud;
+            solicitud.DetalleSolicitud.Add(detalleSolicitud);
             //SolicitudDataBind(solicitud);
            
             gvDetalleSolicitud.DataSource = solicitud;
-            gvDetalleSolicitud.Visible = true;
             gvDetalleSolicitud.DataBind();
         }
 

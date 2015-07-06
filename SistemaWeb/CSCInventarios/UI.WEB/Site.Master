@@ -13,6 +13,38 @@
         {
             font-family: Tahoma;
         }
+        .menu
+        {
+            font-size: small;
+        }
+        .menu
+        {
+            font-family: "Times New Roman", Times, serif;
+        }
+        .menu
+        {
+            font-size: medium;
+        }
+        .menu
+        {
+            font-weight: 700;
+        }
+        .menu
+        {
+            font-weight: 700;
+        }
+        .menu
+        {
+            font-weight: 700;
+        }
+        .menu
+        {
+            font-weight: 700;
+        }
+        .menu
+        {
+            font-size: large;
+        }
     </style>
 </head>
 <body>

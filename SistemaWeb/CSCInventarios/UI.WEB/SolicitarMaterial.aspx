@@ -9,10 +9,6 @@
     {
         width: 100%;
     }
-    .style4
-    {
-        width: 60px;
-    }
     .style5
     {
         width: 128px;
@@ -40,17 +36,13 @@
         {
             width: 76px;
         }
-        .style18
-        {
-            width: 97px;
-        }
-        .style19
-        {
-            width: 44px;
-        }
         .style20
         {
             width: 124px;
+        }
+        .style21
+        {
+            height: 21px;
         }
     </style>
 </asp:Content>
@@ -59,19 +51,14 @@
     <strong>Solicitar Material</strong></p>
     <table class="style3">
         <tr>
-            <td class="style4">
+            <td>
                 &nbsp;</td>
-            <td class="style15">
-                &nbsp;</td>
-            <td class="style19">
-                &nbsp;</td>
-            <td class="style20">
-                &nbsp;</td>
-            <td class="style18">
-                &nbsp;</td>
-            <td class="style5">
+            <td>
                 &nbsp;</td>
         </tr>
+        <tr>
+            <td>
+    <table class="style3">
         <tr>
             <td class="style7">
                 <strong>IdSolicitud</strong></td>
@@ -95,27 +82,65 @@
                 </asp:ObjectDataSource>
             </td>
         </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style15">
-                &nbsp;</td>
-            <td class="style19">
-                &nbsp;</td>
-            <td class="style20">
-                &nbsp;</td>
-            <td class="style18">
-                &nbsp;</td>
-            <td class="style5">
+        </table>
+            </td>
+            <td>
                 &nbsp;</td>
         </tr>
-</table>
-    <!--DETALLE--> 
-     &nbsp;<!--DETALLE--><br />
-    <table class="style3">
         <tr>
             <td>
-                -<fieldset>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+
+       
+    <asp:Panel ID="pnlDetalleSolictud" runat="server" CssClass="CajaDialogo" >
+        <fieldset>
+            <legend>Detalle de Solicitud:</legend>
+            <asp:GridView ID="gvDetalleSolicitud" runat="server" 
+                AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" 
+                BorderStyle="None" BorderWidth="1px" CellPadding="3" PageSize="5">
+                    <Columns>
+                        <asp:BoundField DataField="material_id" HeaderText="Material_id" />
+                        <asp:BoundField DataField="ds_cantidad_solicitada" HeaderText="Código" />
+                        <asp:BoundField DataField="Producto" HeaderText="Producto" />
+                        <asp:BoundField DataField="aa" HeaderText="a" />
+                    </Columns>
+                    <FooterStyle BackColor="White" ForeColor="#000066" />
+                    <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                    <RowStyle ForeColor="#000066" />
+                    <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#00547E" />
+            </asp:GridView>
+        </fieldset>
+
+                       
+        <br />
+         <asp:Button ID="btnRegistrarSolicitud" runat="server" 
+            Text="Registrar Solicitud" />
+         <br />  
+    </asp:Panel>
+  
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <fieldset>
         <legend>Materiales</legend>
 
                     <span class="style14"><strong>
@@ -133,7 +158,7 @@
          <asp:TextBox ID="txtMatObsevac" runat="server" Width="478px"></asp:TextBox>
          </strong>
          <br />
-         <asp:Button ID="btnAgregarMaterial"  Text="Agrear" runat="server" 
+         <asp:Button ID="btnAgregarMaterial"  Text="Agregar Material al Detalle" runat="server" 
             onclick="btnAgregar_Click" />
 
 
@@ -198,32 +223,10 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-
-       
-    <asp:Panel ID="pnlDetalleSolictud" runat="server" CssClass="CajaDialogo" >
-        <fieldset>
-            <legend>Detalle de Solicitud:</legend>
-            <asp:GridView ID="gvDetalleSolicitud" runat="server">
-            </asp:GridView>
-        </fieldset>
-
-                       
-        <br />
-         <asp:Button ID="btnRegistrarSolicitud" runat="server" 
-            Text="Registrar Solicitud" />
-         <br />  
-    </asp:Panel>
-  
-            </td>
-            <td>
-                &nbsp;</td>
+            <td class="style21">
+                </td>
+            <td class="style21">
+                </td>
         </tr>
         <tr>
             <td>
@@ -231,25 +234,5 @@
             <td>
                 &nbsp;</td>
         </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-    </table>
-    <br />
-    <br />
+        </table>
     </asp:Content>
