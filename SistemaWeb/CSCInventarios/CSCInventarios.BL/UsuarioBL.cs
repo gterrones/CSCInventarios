@@ -11,22 +11,29 @@ namespace CSCInventarios.BL
 {
     public class UsuarioBL:IUsuarioBL
     {
-        public List<EL.Usuario> LeerTodosLosUsuarios()
+        [Dependency]
+        public IUsuarioDAL usuarioBL { get; set; }
+
+        public UsuarioBL() {
+            usuarioBL = new UsuarioDAL();
+        }
+
+        public List<Usuario> LeerTodosLosUsuarios()
+        {
+            return usuarioBL.LeerTodosLosUsuarios();
+        }
+
+        public Usuario LeerUsuarioPorUsuarioId(int usuario_id)
         {
             throw new NotImplementedException();
         }
 
-        public EL.Usuario LeerUsuarioPorUsuarioId(int usuario_id)
+        public List<Usuario> LeerUsuarioPorCriterio(string criterio)
         {
             throw new NotImplementedException();
         }
 
-        public List<EL.Usuario> LeerUsuarioPorCriterio(string criterio)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void CrearUsuario(EL.Usuario usuario)
+        public void CrearUsuario(Usuario usuario)
         {
             throw new NotImplementedException();
         }
@@ -36,7 +43,7 @@ namespace CSCInventarios.BL
             throw new NotImplementedException();
         }
 
-        public void modificarUsuario(EL.Usuario usuario)
+        public void modificarUsuario(Usuario usuario)
         {
             throw new NotImplementedException();
         }

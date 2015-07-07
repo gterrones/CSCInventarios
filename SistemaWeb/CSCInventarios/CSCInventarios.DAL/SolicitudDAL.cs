@@ -24,7 +24,11 @@ namespace CSCInventarios.DAL
         [Dependency]
         public IDetalleSolicitudDAL detalleSolicitudDAL { get; set; }
 
-        public SolicitudDAL() { }
+        public SolicitudDAL() {
+            estacionDAL = new EstacionDAL();
+            usuarioDAL = new UsuarioDAL();
+            detalleSolicitudDAL = new DetalleSolicitudDAL();
+        }
 
         public void CrearSolicitud(Solicitud solicitud)
         {
@@ -42,11 +46,11 @@ namespace CSCInventarios.DAL
             DataBase.AddInParameter(command, "usuario_id", System.Data.DbType.Int32, solicitud.usuario_id);
             DataBase.AddInParameter(command, "estacion_id", System.Data.DbType.Int32, solicitud.estacion_id);
             DataBase.AddInParameter(command, "sl_fecha", System.Data.DbType.DateTime, solicitud.sl_fecha);
-            DataBase.AddInParameter(command, "sl_recepcion", System.Data.DbType.Decimal, solicitud.sl_recepcion);
-            DataBase.AddInParameter(command, "sl_asignacion", System.Data.DbType.Int32, solicitud.sl_asignacion);
-            DataBase.AddInParameter(command, "sl_atencion", System.Data.DbType.DateTime, solicitud.sl_atencion);
-            DataBase.AddInParameter(command, "sl_aceptacion", System.Data.DbType.Decimal, solicitud.sl_aceptacion);
-            DataBase.AddInParameter(command, "sl_eliminado", System.Data.DbType.Int32, solicitud.sl_eliminado);
+            DataBase.AddInParameter(command, "sl_recepcion", System.Data.DbType.Boolean, solicitud.sl_recepcion);
+            DataBase.AddInParameter(command, "sl_asignacion", System.Data.DbType.Boolean, solicitud.sl_asignacion);
+            DataBase.AddInParameter(command, "sl_atencion", System.Data.DbType.Boolean, solicitud.sl_atencion);
+            DataBase.AddInParameter(command, "sl_aceptacion", System.Data.DbType.Boolean, solicitud.sl_aceptacion);
+            DataBase.AddInParameter(command, "sl_eliminado", System.Data.DbType.Boolean, solicitud.sl_eliminado);
 
             DataBase.ExecuteNonQuery(command);
 

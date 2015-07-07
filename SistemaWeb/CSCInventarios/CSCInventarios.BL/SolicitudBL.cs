@@ -14,7 +14,9 @@ namespace CSCInventarios.BL
         [Dependency]
         ISolicitudDAL solicitudDAL { get; set; }
 
-        public SolicitudBL() { }
+        public SolicitudBL() {
+            solicitudDAL = new SolicitudDAL();
+        }
 
         public void CrearSolicitud(Solicitud solicitud)
         {

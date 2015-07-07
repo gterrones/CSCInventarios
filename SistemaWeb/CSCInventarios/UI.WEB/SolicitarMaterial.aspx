@@ -11,11 +11,11 @@
     }
     .style5
     {
-        width: 128px;
+        width: 379px;
     }
     .style7
     {
-        width: 60px;
+        width: 83px;
         font-size: medium;
     }
     .style8
@@ -25,16 +25,12 @@
     }
     .style10
     {
-        width: 97px;
+        width: 64px;
         font-size: medium;
     }
         .style14
         {
             font-size: medium;
-        }
-        .style15
-        {
-            width: 76px;
         }
         .style20
         {
@@ -44,6 +40,19 @@
         {
             height: 21px;
         }
+    .style22
+    {
+        width: 99px;
+    }
+    .style23
+    {
+        width: 59px;
+        font-size: medium;
+    }
+    .style24
+    {
+        width: 202px;
+    }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -62,7 +71,7 @@
         <tr>
             <td class="style7">
                 <strong>IdSolicitud</strong></td>
-            <td class="style15">
+            <td class="style22">
                 <asp:TextBox ID="txtSolicId" runat="server" Width="40px">0</asp:TextBox>
             </td>
             <td class="style8">
@@ -74,11 +83,23 @@
                 <strong>Estacion</strong></td>
             <td class="style5">
                 <asp:DropDownList ID="ddlEstaciones" runat="server" style="margin-left: 0px" 
-                    Width="237px" DataSourceID="odsLeerTodasLasEstaciones" 
+                    Width="197px" DataSourceID="odsLeerTodasLasEstaciones" 
                     DataTextField="estacion_nombre" DataValueField="estacion_id">
                 </asp:DropDownList>
                 <asp:ObjectDataSource ID="odsLeerTodasLasEstaciones" runat="server" 
                     SelectMethod="LeerTodasLasEstaciones" TypeName="CSCInventarios.BL.EstacionBL">
+                </asp:ObjectDataSource>
+            </td>
+            <td class="style23">
+                <strong>Usuario</strong></td>
+            <td class="style24">
+                <asp:DropDownList ID="ddlUsuarios" runat="server" 
+                    DataSourceID="odsLeerTodosLosusuarios" DataTextField="usuario_nombre" 
+                    DataValueField="usuario_id" Height="22px" style="margin-left: 0px" 
+                    Width="175px">
+                </asp:DropDownList>
+                <asp:ObjectDataSource ID="odsLeerTodosLosusuarios" runat="server" 
+                    SelectMethod="LeerTodosLosUsuarios" TypeName="CSCInventarios.BL.UsuarioBL">
                 </asp:ObjectDataSource>
             </td>
         </tr>
@@ -106,8 +127,6 @@
                     <Columns>
                         <asp:BoundField DataField="material_id" HeaderText="Material_id" />
                         <asp:BoundField DataField="ds_cantidad_solicitada" HeaderText="Código" />
-                        <asp:BoundField DataField="Producto" HeaderText="Producto" />
-                        <asp:BoundField DataField="aa" HeaderText="a" />
                     </Columns>
                     <FooterStyle BackColor="White" ForeColor="#000066" />
                     <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
@@ -124,7 +143,7 @@
                        
         <br />
          <asp:Button ID="btnRegistrarSolicitud" runat="server" 
-            Text="Registrar Solicitud" />
+            Text="Registrar Solicitud" onclick="btnRegistrarSolicitud_Click" />
          <br />  
     </asp:Panel>
   
