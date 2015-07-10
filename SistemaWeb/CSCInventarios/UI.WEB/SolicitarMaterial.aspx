@@ -129,8 +129,8 @@
                 AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" 
                 BorderStyle="None" BorderWidth="1px" CellPadding="3" PageSize="5">
                     <Columns>
-                        <asp:BoundField DataField="material_id" HeaderText="Material_id" />
-                        <asp:BoundField DataField="ds_cantidad_solicitada" HeaderText="Código" />
+                        <asp:BoundField DataField="Material" HeaderText="Material" />
+                        <asp:BoundField DataField="ds_cantidad_solicitada" HeaderText="Cantidad" />
                     </Columns>
                     <FooterStyle BackColor="White" ForeColor="#000066" />
                     <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
@@ -191,7 +191,6 @@
         </tr>
         <tr>
             <td>
-                <asp:Button ID="Button1" runat="server" Text="Button" />
             </td>
             <td>
                 &nbsp;</td>

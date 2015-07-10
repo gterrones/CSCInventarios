@@ -26,6 +26,8 @@ namespace CSCInventarios.DAL
         [Dependency]
         public IDetalleSolicitudDAL detalleSolicitudDAL { get; set; }
 
+        [Dependency]
+        public ISolicitudDAL solicitudDAL { get; set; }
 
         public SolicitudDAL() {
             estacionDAL = new EstacionDAL();

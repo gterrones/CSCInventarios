@@ -17,7 +17,7 @@ namespace CSCInventarios.EL
 
         public override string ToString()
         {
-            return material_nombre;
+            return material_nombre + " " + material_modelo + " " + material_marca ;
         }
     }
 }

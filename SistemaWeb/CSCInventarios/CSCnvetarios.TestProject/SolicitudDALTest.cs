@@ -13,7 +13,7 @@ namespace CSCnvetarios.TestProject
     ///contenga todas las pruebas unitarias SolicitudDALTest.
     ///</summary>
     [TestClass()]
-    public class SolicitudDALTest
+    public class SolicitudDALTest : cnx
     {
 
 
@@ -79,17 +79,6 @@ namespace CSCnvetarios.TestProject
             Assert.Inconclusive("Un método que no devuelve ningún valor no se puede comprobar.");
         }
 
-        /// <summary>
-        ///Una prueba de EliminarSolicitud
-        ///</summary>
-        [TestMethod()]
-        public void EliminarSolicitudTest()
-        {
-            SolicitudDAL target = new SolicitudDAL(); // TODO: Inicializar en un valor adecuado
-            int sl_id = 0; // TODO: Inicializar en un valor adecuado
-            target.EliminarSolicitud(sl_id);
-            Assert.Inconclusive("Un método que no devuelve ningún valor no se puede comprobar.");
-        }
 
         /// <summary>
         ///Una prueba de LeerEstacionesPorEstacionId
@@ -99,12 +88,12 @@ namespace CSCnvetarios.TestProject
         public void LeerEstacionesPorEstacionIdTest()
         {
             SolicitudDAL_Accessor target = new SolicitudDAL_Accessor(); // TODO: Inicializar en un valor adecuado
-            int estacion_id = 0; // TODO: Inicializar en un valor adecuado
-            Estacion expected = null; // TODO: Inicializar en un valor adecuado
+            int estacion_id = 1; // TODO: Inicializar en un valor adecuado
+            Estacion expected = new Estacion(); // TODO: Inicializar en un valor adecuado
             Estacion actual;
             actual = target.LeerEstacionesPorEstacionId(estacion_id);
             Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Compruebe la exactitud de este método de prueba.");
+            //Assert.Inconclusive("Compruebe la exactitud de este método de prueba.");
         }
 
         /// <summary>

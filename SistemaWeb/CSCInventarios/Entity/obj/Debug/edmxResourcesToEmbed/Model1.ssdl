@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CSCInventariosDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="CSCInventariosDBModelStoreContainer">
+    <EntitySet Name="DetalleRequerimiento" EntityType="CSCInventariosDBModel.Store.DetalleRequerimiento" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DetalleSolicitud" EntityType="CSCInventariosDBModel.Store.DetalleSolicitud" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Estacion" EntityType="CSCInventariosDBModel.Store.Estacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Inventario" EntityType="CSCInventariosDBModel.Store.Inventario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Material" EntityType="CSCInventariosDBModel.Store.Material" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Requerimiento" EntityType="CSCInventariosDBModel.Store.Requerimiento" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Solicitud" EntityType="CSCInventariosDBModel.Store.Solicitud" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="CSCInventariosDBModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="CSCInventariosDBModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_DetalleRequerimiento_Material" Association="CSCInventariosDBModel.Store.FK_DetalleRequerimiento_Material">
+      <End Role="Material" EntitySet="Material" />
+      <End Role="DetalleRequerimiento" EntitySet="DetalleRequerimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleRequerimiento_Requerimiento" Association="CSCInventariosDBModel.Store.FK_DetalleRequerimiento_Requerimiento">
+      <End Role="Requerimiento" EntitySet="Requerimiento" />
+      <End Role="DetalleRequerimiento" EntitySet="DetalleRequerimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleSolicitud_Material" Association="CSCInventariosDBModel.Store.FK_DetalleSolicitud_Material">
+      <End Role="Material" EntitySet="Material" />
+      <End Role="DetalleSolicitud" EntitySet="DetalleSolicitud" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleSolicitud_Solicitud" Association="CSCInventariosDBModel.Store.FK_DetalleSolicitud_Solicitud">
+      <End Role="Solicitud" EntitySet="Solicitud" />
+      <End Role="DetalleSolicitud" EntitySet="DetalleSolicitud" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventario_Material" Association="CSCInventariosDBModel.Store.FK_Inventario_Material">
+      <End Role="Material" EntitySet="Material" />
+      <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventario_Requerimiento" Association="CSCInventariosDBModel.Store.FK_Inventario_Requerimiento">
+      <End Role="Requerimiento" EntitySet="Requerimiento" />
+      <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventario_Solicitud" Association="CSCInventariosDBModel.Store.FK_Inventario_Solicitud">
+      <End Role="Solicitud" EntitySet="Solicitud" />
+      <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Requerimiento_Usuario" Association="CSCInventariosDBModel.Store.FK_Requerimiento_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Requerimiento" EntitySet="Requerimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitud_Estacion" Association="CSCInventariosDBModel.Store.FK_Solicitud_Estacion">
+      <End Role="Estacion" EntitySet="Estacion" />
+      <End Role="Solicitud" EntitySet="Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitud_Usuario" Association="CSCInventariosDBModel.Store.FK_Solicitud_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Solicitud" EntitySet="Solicitud" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="DetalleRequerimiento">
+    <Key>
+      <PropertyRef Name="dr_id" />
+    </Key>
+    <Property Name="dr_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="rq_id" Type="int" Nullable="false" />
+    <Property Name="material_id" Type="int" Nullable="false" />
+    <Property Name="dr_cantidad_rq" Type="int" />
+    <Property Name="dr_cantidad_ingreso" Type="int" />
+  </EntityType>
+  <EntityType Name="DetalleSolicitud">
+    <Key>
+      <PropertyRef Name="ds_id" />
+    </Key>
+    <Property Name="ds_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="sl_id" Type="int" Nullable="false" />
+    <Property Name="material_id" Type="int" />
+    <Property Name="ds_cantidad_solicitada" Type="int" />
+    <Property Name="ds_cantidad_asignada" Type="int" />
+    <Property Name="ds_cantidad_aceptada" Type="int" />
+  </EntityType>
+  <EntityType Name="Estacion">
+    <Key>
+      <PropertyRef Name="estacion_id" />
+    </Key>
+    <Property Name="estacion_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="estacion_nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="estacion_zona" Type="nvarchar" MaxLength="50" />
+    <Property Name="estacion_coordenadas" Type="nvarchar" MaxLength="50" />
+    <Property Name="estacion_referencia" Type="nvarchar" MaxLength="50" />
+    <Property Name="estacion_eliminado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Inventario">
+    <Key>
+      <PropertyRef Name="inventario_id" />
+    </Key>
+    <Property Name="inventario_id" Type="int" Nullable="false" />
+    <Property Name="sl_id" Type="int" />
+    <Property Name="rq_id" Type="int" />
+    <Property Name="inventario_cantidad_rq_entrada" Type="int" />
+    <Property Name="inventario_cantidad_sl_salida" Type="int" />
+    <Property Name="fecha_movimiento" Type="datetime" />
+    <Property Name="material_id" Type="int" Nullable="false" />
+    <Property Name="Inventario_eliminado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Material">
+    <Key>
+      <PropertyRef Name="material_id" />
+    </Key>
+    <Property Name="material_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="material_nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="material_modelo" Type="nvarchar" MaxLength="50" />
+    <Property Name="material_cantidad" Type="int" />
+    <Property Name="material_observacion" Type="nvarchar" MaxLength="50" />
+    <Property Name="material_eliminado" Type="bit" />
+    <Property Name="material_marca" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Requerimiento">
+    <Key>
+      <PropertyRef Name="rq_id" />
+    </Key>
+    <Property Name="rq_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="usuario_id" Type="int" />
+    <Property Name="rq_fecha" Type="datetime" />
+    <Property Name="rq_validacion" Type="bit" />
+    <Property Name="rq_eliminado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Solicitud">
+    <Key>
+      <PropertyRef Name="sl_id" />
+    </Key>
+    <Property Name="sl_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="usuario_id" Type="int" />
+    <Property Name="estacion_id" Type="int" />
+    <Property Name="sl_fecha" Type="nvarchar" MaxLength="20" />
+    <Property Name="sl_recepcion" Type="bit" />
+    <Property Name="sl_asignacion" Type="bit" />
+    <Property Name="sl_atencion" Type="bit" />
+    <Property Name="sl_aceptacion" Type="bit" />
+    <Property Name="sl_eliminado" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="usuario_id" />
+    </Key>
+    <Property Name="usuario_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="usuario_nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="usuario_apellido" Type="nvarchar" MaxLength="50" />
+    <Property Name="usuario_telefono" Type="nvarchar" MaxLength="50" />
+    <Property Name="usuario_usuario" Type="nvarchar" MaxLength="50" />
+    <Property Name="usuario_clave" Type="nvarchar" MaxLength="50" />
+    <Property Name="usuario_eliminado" Type="bit" />
+  </EntityType>
+  <Association Name="FK_DetalleRequerimiento_Material">
+    <End Role="Material" Type="CSCInventariosDBModel.Store.Material" Multiplicity="1" />
+    <End Role="DetalleRequerimiento" Type="CSCInventariosDBModel.Store.DetalleRequerimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Material">
+        <PropertyRef Name="material_id" />
+      </Principal>
+      <Dependent Role="DetalleRequerimiento">
+        <PropertyRef Name="material_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleRequerimiento_Requerimiento">
+    <End Role="Requerimiento" Type="CSCInventariosDBModel.Store.Requerimiento" Multiplicity="1" />
+    <End Role="DetalleRequerimiento" Type="CSCInventariosDBModel.Store.DetalleRequerimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Requerimiento">
+        <PropertyRef Name="rq_id" />
+      </Principal>
+      <Dependent Role="DetalleRequerimiento">
+        <PropertyRef Name="rq_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleSolicitud_Material">
+    <End Role="Material" Type="CSCInventariosDBModel.Store.Material" Multiplicity="0..1" />
+    <End Role="DetalleSolicitud" Type="CSCInventariosDBModel.Store.DetalleSolicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Material">
+        <PropertyRef Name="material_id" />
+      </Principal>
+      <Dependent Role="DetalleSolicitud">
+        <PropertyRef Name="material_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleSolicitud_Solicitud">
+    <End Role="Solicitud" Type="CSCInventariosDBModel.Store.Solicitud" Multiplicity="1" />
+    <End Role="DetalleSolicitud" Type="CSCInventariosDBModel.Store.DetalleSolicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Solicitud">
+        <PropertyRef Name="sl_id" />
+      </Principal>
+      <Dependent Role="DetalleSolicitud">
+        <PropertyRef Name="sl_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventario_Material">
+    <End Role="Material" Type="CSCInventariosDBModel.Store.Material" Multiplicity="1" />
+    <End Role="Inventario" Type="CSCInventariosDBModel.Store.Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Material">
+        <PropertyRef Name="material_id" />
+      </Principal>
+      <Dependent Role="Inventario">
+        <PropertyRef Name="material_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventario_Requerimiento">
+    <End Role="Requerimiento" Type="CSCInventariosDBModel.Store.Requerimiento" Multiplicity="0..1" />
+    <End Role="Inventario" Type="CSCInventariosDBModel.Store.Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Requerimiento">
+        <PropertyRef Name="rq_id" />
+      </Principal>
+      <Dependent Role="Inventario">
+        <PropertyRef Name="rq_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventario_Solicitud">
+    <End Role="Solicitud" Type="CSCInventariosDBModel.Store.Solicitud" Multiplicity="0..1" />
+    <End Role="Inventario" Type="CSCInventariosDBModel.Store.Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Solicitud">
+        <PropertyRef Name="sl_id" />
+      </Principal>
+      <Dependent Role="Inventario">
+        <PropertyRef Name="sl_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Requerimiento_Usuario">
+    <End Role="Usuario" Type="CSCInventariosDBModel.Store.Usuario" Multiplicity="0..1" />
+    <End Role="Requerimiento" Type="CSCInventariosDBModel.Store.Requerimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuario_id" />
+      </Principal>
+      <Dependent Role="Requerimiento">
+        <PropertyRef Name="usuario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitud_Estacion">
+    <End Role="Estacion" Type="CSCInventariosDBModel.Store.Estacion" Multiplicity="0..1" />
+    <End Role="Solicitud" Type="CSCInventariosDBModel.Store.Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estacion">
+        <PropertyRef Name="estacion_id" />
+      </Principal>
+      <Dependent Role="Solicitud">
+        <PropertyRef Name="estacion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitud_Usuario">
+    <End Role="Usuario" Type="CSCInventariosDBModel.Store.Usuario" Multiplicity="0..1" />
+    <End Role="Solicitud" Type="CSCInventariosDBModel.Store.Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuario_id" />
+      </Principal>
+      <Dependent Role="Solicitud">
+        <PropertyRef Name="usuario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="CrearDetalleRequerimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dr_id" Type="int" Mode="In" />
+    <Parameter Name="rq_id" Type="int" Mode="In" />
+    <Parameter Name="material_id" Type="int" Mode="In" />
+    <Parameter Name="dr_cantidad_rq" Type="int" Mode="In" />
+    <Parameter Name="dr_cantidad_ingreso" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CrearDetalleSolicitud" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ds_id" Type="int" Mode="In" />
+    <Parameter Name="sl_id" Type="int" Mode="In" />
+    <Parameter Name="material_id" Type="int" Mode="In" />
+    <Parameter Name="ds_cantidad_solicitada" Type="int" Mode="In" />
+    <Parameter Name="ds_cantidad_asignada" Type="int" Mode="In" />
+    <Parameter Name="ds_cantidad_aceptada" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CrearEstacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="estacion_nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="estacion_zona" Type="nvarchar" Mode="In" />
+    <Parameter Name="estacion_coordenadas" Type="nvarchar" Mode="In" />
+    <Parameter Name="estacion_referencia" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="CrearMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="material_nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="material_modelo" Type="nvarchar" Mode="In" />
+    <Parameter Name="material_marca" Type="nvarchar" Mode="In" />
+    <Parameter Name="material_cantidad" Type="int" Mode="In" />
+    <Parameter Name="material_observacion" Type="nvarchar" Mode="In" />
+    <Parameter Name="material_eliminado" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="CrearMaterial2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="material_id" Type="int" Mode="InOut" />
+    <Parameter Name="material_nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="material_modelo" Type="nvarchar" Mode="In" />
+    <Parameter Name="material_marca" Type="nvarchar" Mode="In" />
+    <Parameter Name="material_cantidad" Type="int" Mode="In" />
+    <Parameter Name="material_observacion" Type="nvarchar" Mode="In" />
+    <Parameter Name="material_eliminado" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="CrearRequerimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuario_id" Type="int" Mode="In" />
+    <Parameter Name="rq_fecha" Type="datetime" Mode="In" />
+    <Parameter Name="rq_validacion" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="CrearSolicitud" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sl_id" Type="int" Mode="InOut" />
+    <Parameter Name="usuario_id" Type="int" Mode="In" />
+    <Parameter Name="estacion_id" Type="int" Mode="In" />
+    <Parameter Name="sl_fecha" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="CrearUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuario_nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="usuario_apellido" Type="nvarchar" Mode="In" />
+    <Parameter Name="usuario_telefono" Type="nvarchar" Mode="In" />
+    <Parameter Name="usuario_usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="usuario_clave" Type="nvarchar" Mode="In" />
+    <Parameter Name="usuario_eliminado" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="EliminarDetalleRequerimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dr_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="EliminarDetalleSolicitud" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ds_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="EliminarEstacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="estacion_id" Type="int" Mode="In" />
+    <Parameter Name="estacion_eliminado" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="EliminarMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="material_id" Type="int" Mode="In" />
+    <Parameter Name="material_eliminado" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="EliminarRequerimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rq_id" Type="int" Mode="In" />
+    <Parameter Name="rq_eliminado" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="EliminarSolicitud" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sl_id" Type="int" Mode="In" />
+    <Parameter Name="sl_eliminado" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="EliminarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuario_id" Type="int" Mode="In" />
+    <Parameter Name="usuario_eliminado" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="LeerDetalleRequerimientoPorDrId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dr_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeerDetalleRequerimientoPorMaterialId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="material_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeerDetalleRequerimientoPorRqId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rq_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeerDetalleSolicitudPorDsId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ds_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeerDetalleSolicitudPorMaterialId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="material_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeerDetalleSolicitudPorSlId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sl_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeerEstacionPorCriterio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="criterio" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="LeerEstacionPorEstacionId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="estacion_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeerMaterialPorCriterio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="criterio" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="LeerMaterialPorMaterialId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="material_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeerRequerimientoEntreFechas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="fechaFin" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="LeerRequerimientoPorRqId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rq_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeerRequerimientoPorUsuarioId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuario_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeerRequerimientosValidados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rq_validacion" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="LeerSolicitudEntreFechas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fechaInicio" Type="datetime" Mode="In" />
+    <Parameter Name="fechaFin" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="LeerSolicitudesAceptadas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sl_aceptacion" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="LeerSolicitudesAsignadas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sl_asignacion" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="LeerSolicitudesAtendidas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sl_atencion" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="LeerSolicitudesRecepcionadas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sl_recepcion" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="LeerSolicitudPorEstacionId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="estacion_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeerSolicitudPorSlId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sl_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeerSolicitudPorUsuarioId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuario_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeerTodasLasEstaciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="LeerTodasLasSolicitudes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="LeerTodosLosDetalleRequerimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="LeerTodosLosDetalleSolicitud" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="LeerTodosLosMateriales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="LeerTodosLosRequerimientos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="LeerTodosLosUsuarios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="LeerUsuarioPorCriterio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="criterio" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeerUsuarioPorUsuarioId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuario_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ModificarDetalleRequerimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dr_id" Type="int" Mode="In" />
+    <Parameter Name="rq_id" Type="int" Mode="In" />
+    <Parameter Name="material_id" Type="int" Mode="In" />
+    <Parameter Name="dr_cantidad_rq" Type="int" Mode="In" />
+    <Parameter Name="dr_cantidad_ingreso" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ModificarDetalleSolicitud" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ds_id" Type="int" Mode="In" />
+    <Parameter Name="sl_id" Type="int" Mode="In" />
+    <Parameter Name="material_id" Type="int" Mode="In" />
+    <Parameter Name="ds_cantidad_solicitada" Type="int" Mode="In" />
+    <Parameter Name="ds_cantidad_asignada" Type="int" Mode="In" />
+    <Parameter Name="ds_cantidad_aceptada" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ModificarEstacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="estacion_id" Type="int" Mode="In" />
+    <Parameter Name="estacion_nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="estacion_zona" Type="nvarchar" Mode="In" />
+    <Parameter Name="estacion_coordenadas" Type="nvarchar" Mode="In" />
+    <Parameter Name="estacion_referencia" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ModificarMaterial" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="material_id" Type="int" Mode="In" />
+    <Parameter Name="material_nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="material_modelo" Type="nvarchar" Mode="In" />
+    <Parameter Name="material_marca" Type="nvarchar" Mode="In" />
+    <Parameter Name="material_cantidad" Type="int" Mode="In" />
+    <Parameter Name="material_observacion" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ModificarRequerimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rq_id" Type="int" Mode="In" />
+    <Parameter Name="usuario_id" Type="int" Mode="In" />
+    <Parameter Name="rq_fecha" Type="datetime" Mode="In" />
+    <Parameter Name="rq_validacion" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="ModificarSolicitud" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sl_id" Type="int" Mode="In" />
+    <Parameter Name="usuario_id" Type="int" Mode="In" />
+    <Parameter Name="estacion_id" Type="int" Mode="In" />
+    <Parameter Name="sl_feha" Type="datetime" Mode="In" />
+    <Parameter Name="sl_recepcion" Type="bit" Mode="In" />
+    <Parameter Name="sl_asignacion" Type="bit" Mode="In" />
+    <Parameter Name="sl_atencion" Type="bit" Mode="In" />
+    <Parameter Name="sl_aceptacion" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="ModificarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuario_id" Type="int" Mode="In" />
+    <Parameter Name="usuario_nombre" Type="nvarchar" Mode="In" />
+    <Parameter Name="usuario_apellido" Type="nvarchar" Mode="In" />
+    <Parameter Name="usuario_telefono" Type="nvarchar" Mode="In" />
+    <Parameter Name="usuario_usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="usuario_clave" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ValidarRequerimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rq_id" Type="int" Mode="In" />
+    <Parameter Name="rq_validacion" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="ValidarSilicitudRecepcionada" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sl_id" Type="int" Mode="In" />
+    <Parameter Name="sl_recepcion" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="ValidarSolicitudAceptadas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sl_id" Type="int" Mode="In" />
+    <Parameter Name="sl_aceptacion" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="ValidarSolicitudAsignadas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sl_id" Type="int" Mode="In" />
+    <Parameter Name="sl_asignacion" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="ValidarSolicitudAtendidas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sl_id" Type="int" Mode="In" />
+    <Parameter Name="sl_atencion" Type="bit" Mode="In" />
+  </Function>
+</Schema>

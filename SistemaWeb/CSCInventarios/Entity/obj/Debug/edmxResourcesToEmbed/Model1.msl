@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CSCInventariosDBModelStoreContainer" CdmEntityContainer="CSCInventariosDBEntities">
+    <EntitySetMapping Name="DetalleRequerimiento">
+      <EntityTypeMapping TypeName="CSCInventariosDBModel.DetalleRequerimiento">
+        <MappingFragment StoreEntitySet="DetalleRequerimiento">
+          <ScalarProperty Name="dr_id" ColumnName="dr_id" />
+          <ScalarProperty Name="rq_id" ColumnName="rq_id" />
+          <ScalarProperty Name="material_id" ColumnName="material_id" />
+          <ScalarProperty Name="dr_cantidad_rq" ColumnName="dr_cantidad_rq" />
+          <ScalarProperty Name="dr_cantidad_ingreso" ColumnName="dr_cantidad_ingreso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleSolicitud">
+      <EntityTypeMapping TypeName="CSCInventariosDBModel.DetalleSolicitud">
+        <MappingFragment StoreEntitySet="DetalleSolicitud">
+          <ScalarProperty Name="ds_id" ColumnName="ds_id" />
+          <ScalarProperty Name="sl_id" ColumnName="sl_id" />
+          <ScalarProperty Name="material_id" ColumnName="material_id" />
+          <ScalarProperty Name="ds_cantidad_solicitada" ColumnName="ds_cantidad_solicitada" />
+          <ScalarProperty Name="ds_cantidad_asignada" ColumnName="ds_cantidad_asignada" />
+          <ScalarProperty Name="ds_cantidad_aceptada" ColumnName="ds_cantidad_aceptada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estacion">
+      <EntityTypeMapping TypeName="CSCInventariosDBModel.Estacion">
+        <MappingFragment StoreEntitySet="Estacion">
+          <ScalarProperty Name="estacion_id" ColumnName="estacion_id" />
+          <ScalarProperty Name="estacion_nombre" ColumnName="estacion_nombre" />
+          <ScalarProperty Name="estacion_zona" ColumnName="estacion_zona" />
+          <ScalarProperty Name="estacion_coordenadas" ColumnName="estacion_coordenadas" />
+          <ScalarProperty Name="estacion_referencia" ColumnName="estacion_referencia" />
+          <ScalarProperty Name="estacion_eliminado" ColumnName="estacion_eliminado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventario">
+      <EntityTypeMapping TypeName="CSCInventariosDBModel.Inventario">
+        <MappingFragment StoreEntitySet="Inventario">
+          <ScalarProperty Name="inventario_id" ColumnName="inventario_id" />
+          <ScalarProperty Name="sl_id" ColumnName="sl_id" />
+          <ScalarProperty Name="rq_id" ColumnName="rq_id" />
+          <ScalarProperty Name="inventario_cantidad_rq_entrada" ColumnName="inventario_cantidad_rq_entrada" />
+          <ScalarProperty Name="inventario_cantidad_sl_salida" ColumnName="inventario_cantidad_sl_salida" />
+          <ScalarProperty Name="fecha_movimiento" ColumnName="fecha_movimiento" />
+          <ScalarProperty Name="material_id" ColumnName="material_id" />
+          <ScalarProperty Name="Inventario_eliminado" ColumnName="Inventario_eliminado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Material">
+      <EntityTypeMapping TypeName="CSCInventariosDBModel.Material">
+        <MappingFragment StoreEntitySet="Material">
+          <ScalarProperty Name="material_id" ColumnName="material_id" />
+          <ScalarProperty Name="material_nombre" ColumnName="material_nombre" />
+          <ScalarProperty Name="material_modelo" ColumnName="material_modelo" />
+          <ScalarProperty Name="material_cantidad" ColumnName="material_cantidad" />
+          <ScalarProperty Name="material_observacion" ColumnName="material_observacion" />
+          <ScalarProperty Name="material_eliminado" ColumnName="material_eliminado" />
+          <ScalarProperty Name="material_marca" ColumnName="material_marca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requerimiento">
+      <EntityTypeMapping TypeName="CSCInventariosDBModel.Requerimiento">
+        <MappingFragment StoreEntitySet="Requerimiento">
+          <ScalarProperty Name="rq_id" ColumnName="rq_id" />
+          <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+          <ScalarProperty Name="rq_fecha" ColumnName="rq_fecha" />
+          <ScalarProperty Name="rq_validacion" ColumnName="rq_validacion" />
+          <ScalarProperty Name="rq_eliminado" ColumnName="rq_eliminado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Solicitud">
+      <EntityTypeMapping TypeName="CSCInventariosDBModel.Solicitud">
+        <MappingFragment StoreEntitySet="Solicitud">
+          <ScalarProperty Name="sl_id" ColumnName="sl_id" />
+          <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+          <ScalarProperty Name="estacion_id" ColumnName="estacion_id" />
+          <ScalarProperty Name="sl_fecha" ColumnName="sl_fecha" />
+          <ScalarProperty Name="sl_recepcion" ColumnName="sl_recepcion" />
+          <ScalarProperty Name="sl_asignacion" ColumnName="sl_asignacion" />
+          <ScalarProperty Name="sl_atencion" ColumnName="sl_atencion" />
+          <ScalarProperty Name="sl_aceptacion" ColumnName="sl_aceptacion" />
+          <ScalarProperty Name="sl_eliminado" ColumnName="sl_eliminado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="CSCInventariosDBModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="CSCInventariosDBModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+          <ScalarProperty Name="usuario_nombre" ColumnName="usuario_nombre" />
+          <ScalarProperty Name="usuario_apellido" ColumnName="usuario_apellido" />
+          <ScalarProperty Name="usuario_telefono" ColumnName="usuario_telefono" />
+          <ScalarProperty Name="usuario_usuario" ColumnName="usuario_usuario" />
+          <ScalarProperty Name="usuario_clave" ColumnName="usuario_clave" />
+          <ScalarProperty Name="usuario_eliminado" ColumnName="usuario_eliminado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

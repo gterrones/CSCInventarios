@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="9980340e-ac6a-4d35-8cf5-acfc262801f3" name="sanchez@SANCHEZ-PC 2015-07-10 13:11:55" runUser="sanchez-PC\sanchez" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="e0b70997-861b-4675-abe8-167edbb03b99">
+    <Description>Esta es la configuración de pruebas predeterminada para una ejecución de pruebas local.</Description>
+    <Deployment userDeploymentRoot="C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\TestResults" useDefaultDeploymentRoot="false" enabled="false" runDeploymentRoot="sanchez_SANCHEZ-PC 2015-07-10 13_11_55">
+      <DeploymentItem filename="C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCInventarios.DAL\bin\Debug\CSCInventarios.DAL.dll" />
+      <DeploymentItem filename="C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll" />
+      <DeploymentItem filename="F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\DBSystem.BussinesEntities.dll" />
+      <DeploymentItem filename="F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\Microsoft.Practices.Unity.Interception.dll" />
+      <DeploymentItem filename="C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\packages\Eastupright.EnterpriseLibrary.Common.2015.6.16.2\lib\Eastupright.EnterpriseLibrary.Common.dll" />
+      <DeploymentItem filename="C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll" />
+      <DeploymentItem filename="C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Configuration.dll" />
+      <DeploymentItem filename="F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+      <DeploymentItem filename="F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\Microsoft.Practices.Unity.Interception.Configuration.dll" />
+      <DeploymentItem filename="C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll" />
+      <DeploymentItem filename="F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+      <DeploymentItem filename="C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCInventarios.EL\bin\Debug\CSCInventarios.EL.dll" />
+      <DeploymentItem filename="F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\DBSystem.DataAccess.dll" />
+      <DeploymentItem filename="C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2015-07-10T13:11:55.3478355-05:00" queuing="2015-07-10T13:11:55.3508357-05:00" start="2015-07-10T13:11:55.3698367-05:00" finish="2015-07-10T13:11:55.7878607-05:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="1" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="LeerSolicitudPorEstacionIdTest" storage="c:\users\sanchez\documents\github\cscinventarios\sistemaweb\cscinventarios\cscnvetarios.testproject\bin\debug\cscnvetarios.testproject.dll" id="9e898cae-0224-5298-c359-5363a510bd5e">
+      <Execution id="3aa96f67-c67c-42ab-9605-43dd1831c0ef" />
+      <TestMethod codeBase="C:/Users/sanchez/Documents/GitHub/CSCInventarios/SistemaWeb/CSCInventarios/CSCnvetarios.TestProject/bin/Debug/CSCnvetarios.TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CSCnvetarios.TestProject.SolicitudDALTest, CSCnvetarios.TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LeerSolicitudPorEstacionIdTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Resultados que no están en la lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos los resultados cargados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="9e898cae-0224-5298-c359-5363a510bd5e" executionId="3aa96f67-c67c-42ab-9605-43dd1831c0ef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="3aa96f67-c67c-42ab-9605-43dd1831c0ef" testId="9e898cae-0224-5298-c359-5363a510bd5e" testName="LeerSolicitudPorEstacionIdTest" computerName="SANCHEZ-PC" startTime="2015-07-10T13:11:55.4008385-05:00" endTime="2015-07-10T13:11:55.7368577-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3aa96f67-c67c-42ab-9605-43dd1831c0ef">
+      <Output>
+        <ErrorInfo>
+          <Message>El adaptador de prueba unitaria produjo la excepción: 
+El tipo no está resuelto para el miembro 'Microsoft.Practices.ServiceLocation.ActivationException,Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'..</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

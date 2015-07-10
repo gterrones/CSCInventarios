@@ -32,3 +32,5 @@ C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCnv
 C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCnvetarios.TestProject\obj\Debug\CSCnvetarios.TestProject.csprojResolveAssemblyReference.cache
 C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCnvetarios.TestProject\obj\Debug\CSCnvetarios.TestProject.dll
 C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCnvetarios.TestProject\obj\Debug\CSCnvetarios.TestProject.pdb
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCnvetarios.TestProject\bin\Debug\CSCInventarios.DAL_Accessor.dll
+C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCnvetarios.TestProject\bin\Debug\CSCInventarios.DAL_Accessor.pdb

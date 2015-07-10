@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CSCInventariosDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="CSCInventariosDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DetalleRequerimiento" EntityType="CSCInventariosDBModel.DetalleRequerimiento" />
+    <EntitySet Name="DetalleSolicitud" EntityType="CSCInventariosDBModel.DetalleSolicitud" />
+    <EntitySet Name="Estacion" EntityType="CSCInventariosDBModel.Estacion" />
+    <EntitySet Name="Inventario" EntityType="CSCInventariosDBModel.Inventario" />
+    <EntitySet Name="Material" EntityType="CSCInventariosDBModel.Material" />
+    <EntitySet Name="Requerimiento" EntityType="CSCInventariosDBModel.Requerimiento" />
+    <EntitySet Name="Solicitud" EntityType="CSCInventariosDBModel.Solicitud" />
+    <EntitySet Name="sysdiagrams" EntityType="CSCInventariosDBModel.sysdiagrams" />
+    <EntitySet Name="Usuario" EntityType="CSCInventariosDBModel.Usuario" />
+    <AssociationSet Name="FK_DetalleRequerimiento_Material" Association="CSCInventariosDBModel.FK_DetalleRequerimiento_Material">
+      <End Role="Material" EntitySet="Material" />
+      <End Role="DetalleRequerimiento" EntitySet="DetalleRequerimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleRequerimiento_Requerimiento" Association="CSCInventariosDBModel.FK_DetalleRequerimiento_Requerimiento">
+      <End Role="Requerimiento" EntitySet="Requerimiento" />
+      <End Role="DetalleRequerimiento" EntitySet="DetalleRequerimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleSolicitud_Material" Association="CSCInventariosDBModel.FK_DetalleSolicitud_Material">
+      <End Role="Material" EntitySet="Material" />
+      <End Role="DetalleSolicitud" EntitySet="DetalleSolicitud" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleSolicitud_Solicitud" Association="CSCInventariosDBModel.FK_DetalleSolicitud_Solicitud">
+      <End Role="Solicitud" EntitySet="Solicitud" />
+      <End Role="DetalleSolicitud" EntitySet="DetalleSolicitud" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitud_Estacion" Association="CSCInventariosDBModel.FK_Solicitud_Estacion">
+      <End Role="Estacion" EntitySet="Estacion" />
+      <End Role="Solicitud" EntitySet="Solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventario_Material" Association="CSCInventariosDBModel.FK_Inventario_Material">
+      <End Role="Material" EntitySet="Material" />
+      <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventario_Requerimiento" Association="CSCInventariosDBModel.FK_Inventario_Requerimiento">
+      <End Role="Requerimiento" EntitySet="Requerimiento" />
+      <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventario_Solicitud" Association="CSCInventariosDBModel.FK_Inventario_Solicitud">
+      <End Role="Solicitud" EntitySet="Solicitud" />
+      <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Requerimiento_Usuario" Association="CSCInventariosDBModel.FK_Requerimiento_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Requerimiento" EntitySet="Requerimiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Solicitud_Usuario" Association="CSCInventariosDBModel.FK_Solicitud_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Solicitud" EntitySet="Solicitud" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="DetalleRequerimiento">
+    <Key>
+      <PropertyRef Name="dr_id" />
+    </Key>
+    <Property Name="dr_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rq_id" Type="Int32" Nullable="false" />
+    <Property Name="material_id" Type="Int32" Nullable="false" />
+    <Property Name="dr_cantidad_rq" Type="Int32" />
+    <Property Name="dr_cantidad_ingreso" Type="Int32" />
+    <NavigationProperty Name="Material" Relationship="CSCInventariosDBModel.FK_DetalleRequerimiento_Material" FromRole="DetalleRequerimiento" ToRole="Material" />
+    <NavigationProperty Name="Requerimiento" Relationship="CSCInventariosDBModel.FK_DetalleRequerimiento_Requerimiento" FromRole="DetalleRequerimiento" ToRole="Requerimiento" />
+  </EntityType>
+  <EntityType Name="DetalleSolicitud">
+    <Key>
+      <PropertyRef Name="ds_id" />
+    </Key>
+    <Property Name="ds_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sl_id" Type="Int32" Nullable="false" />
+    <Property Name="material_id" Type="Int32" />
+    <Property Name="ds_cantidad_solicitada" Type="Int32" />
+    <Property Name="ds_cantidad_asignada" Type="Int32" />
+    <Property Name="ds_cantidad_aceptada" Type="Int32" />
+    <NavigationProperty Name="Material" Relationship="CSCInventariosDBModel.FK_DetalleSolicitud_Material" FromRole="DetalleSolicitud" ToRole="Material" />
+    <NavigationProperty Name="Solicitud" Relationship="CSCInventariosDBModel.FK_DetalleSolicitud_Solicitud" FromRole="DetalleSolicitud" ToRole="Solicitud" />
+  </EntityType>
+  <EntityType Name="Estacion">
+    <Key>
+      <PropertyRef Name="estacion_id" />
+    </Key>
+    <Property Name="estacion_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="estacion_nombre" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="estacion_zona" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="estacion_coordenadas" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="estacion_referencia" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="estacion_eliminado" Type="Boolean" />
+    <NavigationProperty Name="Solicitud" Relationship="CSCInventariosDBModel.FK_Solicitud_Estacion" FromRole="Estacion" ToRole="Solicitud" />
+  </EntityType>
+  <EntityType Name="Inventario">
+    <Key>
+      <PropertyRef Name="inventario_id" />
+    </Key>
+    <Property Name="inventario_id" Type="Int32" Nullable="false" />
+    <Property Name="sl_id" Type="Int32" />
+    <Property Name="rq_id" Type="Int32" />
+    <Property Name="inventario_cantidad_rq_entrada" Type="Int32" />
+    <Property Name="inventario_cantidad_sl_salida" Type="Int32" />
+    <Property Name="fecha_movimiento" Type="DateTime" />
+    <Property Name="material_id" Type="Int32" Nullable="false" />
+    <Property Name="Inventario_eliminado" Type="Boolean" />
+    <NavigationProperty Name="Material" Relationship="CSCInventariosDBModel.FK_Inventario_Material" FromRole="Inventario" ToRole="Material" />
+    <NavigationProperty Name="Requerimiento" Relationship="CSCInventariosDBModel.FK_Inventario_Requerimiento" FromRole="Inventario" ToRole="Requerimiento" />
+    <NavigationProperty Name="Solicitud" Relationship="CSCInventariosDBModel.FK_Inventario_Solicitud" FromRole="Inventario" ToRole="Solicitud" />
+  </EntityType>
+  <EntityType Name="Material">
+    <Key>
+      <PropertyRef Name="material_id" />
+    </Key>
+    <Property Name="material_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="material_nombre" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="material_modelo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="material_cantidad" Type="Int32" />
+    <Property Name="material_observacion" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="material_eliminado" Type="Boolean" />
+    <Property Name="material_marca" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="DetalleRequerimiento" Relationship="CSCInventariosDBModel.FK_DetalleRequerimiento_Material" FromRole="Material" ToRole="DetalleRequerimiento" />
+    <NavigationProperty Name="DetalleSolicitud" Relationship="CSCInventariosDBModel.FK_DetalleSolicitud_Material" FromRole="Material" ToRole="DetalleSolicitud" />
+    <NavigationProperty Name="Inventario" Relationship="CSCInventariosDBModel.FK_Inventario_Material" FromRole="Material" ToRole="Inventario" />
+  </EntityType>
+  <EntityType Name="Requerimiento">
+    <Key>
+      <PropertyRef Name="rq_id" />
+    </Key>
+    <Property Name="rq_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario_id" Type="Int32" />
+    <Property Name="rq_fecha" Type="DateTime" />
+    <Property Name="rq_validacion" Type="Boolean" />
+    <Property Name="rq_eliminado" Type="Boolean" />
+    <NavigationProperty Name="DetalleRequerimiento" Relationship="CSCInventariosDBModel.FK_DetalleRequerimiento_Requerimiento" FromRole="Requerimiento" ToRole="DetalleRequerimiento" />
+    <NavigationProperty Name="Inventario" Relationship="CSCInventariosDBModel.FK_Inventario_Requerimiento" FromRole="Requerimiento" ToRole="Inventario" />
+    <NavigationProperty Name="Usuario" Relationship="CSCInventariosDBModel.FK_Requerimiento_Usuario" FromRole="Requerimiento" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Solicitud">
+    <Key>
+      <PropertyRef Name="sl_id" />
+    </Key>
+    <Property Name="sl_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario_id" Type="Int32" />
+    <Property Name="estacion_id" Type="Int32" />
+    <Property Name="sl_fecha" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="sl_recepcion" Type="Boolean" />
+    <Property Name="sl_asignacion" Type="Boolean" />
+    <Property Name="sl_atencion" Type="Boolean" />
+    <Property Name="sl_aceptacion" Type="Boolean" />
+    <Property Name="sl_eliminado" Type="Boolean" />
+    <NavigationProperty Name="DetalleSolicitud" Relationship="CSCInventariosDBModel.FK_DetalleSolicitud_Solicitud" FromRole="Solicitud" ToRole="DetalleSolicitud" />
+    <NavigationProperty Name="Estacion" Relationship="CSCInventariosDBModel.FK_Solicitud_Estacion" FromRole="Solicitud" ToRole="Estacion" />
+    <NavigationProperty Name="Inventario" Relationship="CSCInventariosDBModel.FK_Inventario_Solicitud" FromRole="Solicitud" ToRole="Inventario" />
+    <NavigationProperty Name="Usuario" Relationship="CSCInventariosDBModel.FK_Solicitud_Usuario" FromRole="Solicitud" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="usuario_id" />
+    </Key>
+    <Property Name="usuario_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario_nombre" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="usuario_apellido" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="usuario_telefono" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="usuario_usuario" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="usuario_clave" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="usuario_eliminado" Type="Boolean" />
+    <NavigationProperty Name="Requerimiento" Relationship="CSCInventariosDBModel.FK_Requerimiento_Usuario" FromRole="Usuario" ToRole="Requerimiento" />
+    <NavigationProperty Name="Solicitud" Relationship="CSCInventariosDBModel.FK_Solicitud_Usuario" FromRole="Usuario" ToRole="Solicitud" />
+  </EntityType>
+  <Association Name="FK_DetalleRequerimiento_Material">
+    <End Role="Material" Type="CSCInventariosDBModel.Material" Multiplicity="1" />
+    <End Role="DetalleRequerimiento" Type="CSCInventariosDBModel.DetalleRequerimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Material">
+        <PropertyRef Name="material_id" />
+      </Principal>
+      <Dependent Role="DetalleRequerimiento">
+        <PropertyRef Name="material_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleRequerimiento_Requerimiento">
+    <End Role="Requerimiento" Type="CSCInventariosDBModel.Requerimiento" Multiplicity="1" />
+    <End Role="DetalleRequerimiento" Type="CSCInventariosDBModel.DetalleRequerimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Requerimiento">
+        <PropertyRef Name="rq_id" />
+      </Principal>
+      <Dependent Role="DetalleRequerimiento">
+        <PropertyRef Name="rq_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleSolicitud_Material">
+    <End Role="Material" Type="CSCInventariosDBModel.Material" Multiplicity="0..1" />
+    <End Role="DetalleSolicitud" Type="CSCInventariosDBModel.DetalleSolicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Material">
+        <PropertyRef Name="material_id" />
+      </Principal>
+      <Dependent Role="DetalleSolicitud">
+        <PropertyRef Name="material_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetalleSolicitud_Solicitud">
+    <End Role="Solicitud" Type="CSCInventariosDBModel.Solicitud" Multiplicity="1" />
+    <End Role="DetalleSolicitud" Type="CSCInventariosDBModel.DetalleSolicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Solicitud">
+        <PropertyRef Name="sl_id" />
+      </Principal>
+      <Dependent Role="DetalleSolicitud">
+        <PropertyRef Name="sl_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitud_Estacion">
+    <End Role="Estacion" Type="CSCInventariosDBModel.Estacion" Multiplicity="0..1" />
+    <End Role="Solicitud" Type="CSCInventariosDBModel.Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estacion">
+        <PropertyRef Name="estacion_id" />
+      </Principal>
+      <Dependent Role="Solicitud">
+        <PropertyRef Name="estacion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventario_Material">
+    <End Role="Material" Type="CSCInventariosDBModel.Material" Multiplicity="1" />
+    <End Role="Inventario" Type="CSCInventariosDBModel.Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Material">
+        <PropertyRef Name="material_id" />
+      </Principal>
+      <Dependent Role="Inventario">
+        <PropertyRef Name="material_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventario_Requerimiento">
+    <End Role="Requerimiento" Type="CSCInventariosDBModel.Requerimiento" Multiplicity="0..1" />
+    <End Role="Inventario" Type="CSCInventariosDBModel.Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Requerimiento">
+        <PropertyRef Name="rq_id" />
+      </Principal>
+      <Dependent Role="Inventario">
+        <PropertyRef Name="rq_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventario_Solicitud">
+    <End Role="Solicitud" Type="CSCInventariosDBModel.Solicitud" Multiplicity="0..1" />
+    <End Role="Inventario" Type="CSCInventariosDBModel.Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Solicitud">
+        <PropertyRef Name="sl_id" />
+      </Principal>
+      <Dependent Role="Inventario">
+        <PropertyRef Name="sl_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Requerimiento_Usuario">
+    <End Role="Usuario" Type="CSCInventariosDBModel.Usuario" Multiplicity="0..1" />
+    <End Role="Requerimiento" Type="CSCInventariosDBModel.Requerimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuario_id" />
+      </Principal>
+      <Dependent Role="Requerimiento">
+        <PropertyRef Name="usuario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Solicitud_Usuario">
+    <End Role="Usuario" Type="CSCInventariosDBModel.Usuario" Multiplicity="0..1" />
+    <End Role="Solicitud" Type="CSCInventariosDBModel.Solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuario_id" />
+      </Principal>
+      <Dependent Role="Solicitud">
+        <PropertyRef Name="usuario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
