@@ -18,11 +18,14 @@ namespace CSCInventarios.DAL
         [Dependency]
         public IUsuarioDAL usuarioDAL { get; set; }
         List<Usuario> listUsuario;
+
         [Dependency]
         public IEstacionDAL estacionDAL { get; set; }
         List<Estacion> listEstacion;
+
         [Dependency]
         public IDetalleSolicitudDAL detalleSolicitudDAL { get; set; }
+
 
         public SolicitudDAL() {
             estacionDAL = new EstacionDAL();
@@ -45,12 +48,7 @@ namespace CSCInventarios.DAL
             //DataBase.AddInParameter(command, "sl_id", System.Data.DbType.Int32 , solicitud.sl_id);
             DataBase.AddInParameter(command, "usuario_id", System.Data.DbType.Int32, solicitud.usuario_id);
             DataBase.AddInParameter(command, "estacion_id", System.Data.DbType.Int32, solicitud.estacion_id);
-            DataBase.AddInParameter(command, "sl_fecha", System.Data.DbType.DateTime, solicitud.sl_fecha);
-            DataBase.AddInParameter(command, "sl_recepcion", System.Data.DbType.Boolean, solicitud.sl_recepcion);
-            DataBase.AddInParameter(command, "sl_asignacion", System.Data.DbType.Boolean, solicitud.sl_asignacion);
-            DataBase.AddInParameter(command, "sl_atencion", System.Data.DbType.Boolean, solicitud.sl_atencion);
-            DataBase.AddInParameter(command, "sl_aceptacion", System.Data.DbType.Boolean, solicitud.sl_aceptacion);
-            DataBase.AddInParameter(command, "sl_eliminado", System.Data.DbType.Boolean, solicitud.sl_eliminado);
+            DataBase.AddInParameter(command, "sl_fecha", System.Data.DbType.String, solicitud.sl_fecha);
 
             DataBase.ExecuteNonQuery(command);
 
@@ -112,17 +110,21 @@ namespace CSCInventarios.DAL
 
         public List<Solicitud> LeerSolicitudPorUsuarioId(int usuario_id)
         {
-
-            var query = DataBase.ExecuteSprocAccessor<Solicitud>("LeerSolicitudPorUsuarioId", usuario_id);
+            var rowMapper = MapBuilder<Solicitud>
+                .MapAllProperties()
+                .DoNotMap(u => u.Estacion)
+                .DoNotMap(u => u.DetalleSolicitud)
+                .Map(u => u.Usuario)
+                .WithFunc(u => usuarioDAL.LeerUsuarioPorUsuarioId(u.GetInt32(u.GetOrdinal("usuario_id"))))
+                .Build();
+            var query = DataBase.ExecuteSprocAccessor<Solicitud>("LeerSolicitudPorUsuarioId", rowMapper, usuario_id);
 
             return query.ToList();
         }
 
         public List<Solicitud> LeerSolicitudPorEstacionId(int estacion_id)
         {
-
-            var query = DataBase.ExecuteSprocAccessor<Solicitud>("LeerSolicitudPorEstacionId", estacion_id);
-
+            var query = DataBase.ExecuteSprocAccessor<Solicitud>("LeerSolicitudPorUsuarioId", estacion_id);
             return query.ToList();
         }
 
@@ -167,9 +169,10 @@ namespace CSCInventarios.DAL
 
         public List<Solicitud> LeerTodasLasSolicitudes()
         {
-            var query = DataBase.ExecuteSprocAccessor<Solicitud>("LeerSolicitudesAceptadas");
+            var query = DataBase.ExecuteSprocAccessor<Solicitud>("LeerTodasLasSolicitudes");
 
             return query.ToList();
+
         }
         /// <summary>
         /// las validaciones quese gestione conla modificacion

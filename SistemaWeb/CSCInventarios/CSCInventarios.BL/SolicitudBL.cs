@@ -70,7 +70,7 @@ namespace CSCInventarios.BL
 
         public List<EL.Solicitud> LeerTodasLasSolicitudes()
         {
-            throw new NotImplementedException();
+            return solicitudDAL.LeerTodasLasSolicitudes();
         }
 
         public void ModificarSolicitud(EL.Solicitud solicitud)

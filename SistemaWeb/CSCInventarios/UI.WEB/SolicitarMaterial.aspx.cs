@@ -26,6 +26,7 @@ namespace UI.WEB
         private const string VARSOLICITUD = "solicitud";
         private const string VARMATERIAL = "material";
 
+
         public SolicitarMaterial() {
             materialBl = new MaterialBL();
             solicitudBL = new SolicitudBL();
@@ -33,13 +34,13 @@ namespace UI.WEB
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Solicitud solicitud = new Solicitud();//
-            SolicitudDataBind(solicitud);
+
         }
 
 
         private void SolicitudDataBind(Solicitud solicitud)
         {
+            
             txtSolicId.Text = solicitud.sl_id.ToString();
             txtSolicFecha.Text= solicitud.sl_fecha.ToString();
             
@@ -104,11 +105,22 @@ namespace UI.WEB
         {
             Solicitud solicitud = Cache.Get(VARSOLICITUD) as Solicitud;
 
-            solicitud.sl_fecha = DateTime.Parse(txtSolicFecha.Text);
+            solicitud.sl_fecha = txtSolicFecha.Text.Trim();
             solicitud.estacion_id = Int32.Parse(ddlEstaciones.SelectedValue);
             solicitud.usuario_id = Int32.Parse(ddlUsuarios.SelectedValue);
 
             solicitudBL.CrearSolicitud(solicitud);
+        }
+
+        protected void btnIniciarSolicitud_Click(object sender, EventArgs e)
+        {
+            Solicitud solicitud = new Solicitud();//
+            SolicitudDataBind(solicitud);
+        }
+
+        protected void odsLeerTodasLasEstaciones_ObjectCreating(object sender, ObjectDataSourceEventArgs e)
+        {
+            e.ObjectInstance = estacionBL;
         }
 
 

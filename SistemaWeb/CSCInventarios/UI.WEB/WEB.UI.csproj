@@ -72,6 +72,7 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="AsignarMaterial.aspx" />
+    <Content Include="ListarSolicitud.aspx" />
     <Content Include="SolicitarMaterial.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
@@ -144,6 +145,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IInjector.cs" />
+    <Compile Include="ListarSolicitud.aspx.cs">
+      <DependentUpon>ListarSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarSolicitud.aspx.designer.cs">
+      <DependentUpon>ListarSolicitud.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

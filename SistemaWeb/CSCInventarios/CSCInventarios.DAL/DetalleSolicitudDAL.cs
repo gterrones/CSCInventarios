@@ -18,6 +18,12 @@ namespace CSCInventarios.DAL
     {
         [Dependency]
         public IMaterialDAL materialDAL { get; set; }
+        public Solicitud solicitud;
+
+        public DetalleSolicitudDAL() {
+            materialDAL = new MaterialDAL();
+            solicitud = new Solicitud();
+        }
 
         public void CrearDetalleSolicitud(List<DetalleSolicitud> detalleSolicitud, int sl_id)
         {

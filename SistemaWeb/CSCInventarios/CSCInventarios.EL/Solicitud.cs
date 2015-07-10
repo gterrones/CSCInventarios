@@ -10,7 +10,7 @@ namespace CSCInventarios.EL
         public Solicitud() { 
         
             sl_id = 0;
-            sl_fecha=DateTime.Now;
+            sl_fecha=DateTime.Now.ToShortDateString();
             sl_recepcion = false;
             sl_asignacion = false;
             sl_atencion = false;
@@ -26,7 +26,7 @@ namespace CSCInventarios.EL
         public int sl_id{get;set;}
 	    public int usuario_id{get;set;}
 	    public int estacion_id{get;set;}
-	    public DateTime sl_fecha{get;set;}
+	    public String sl_fecha{get;set;}
 	    public Boolean sl_recepcion{get;set;}
 	    public Boolean sl_asignacion{get;set;}
         public Boolean sl_atencion{get;set;}
@@ -36,5 +36,9 @@ namespace CSCInventarios.EL
         public List<DetalleSolicitud> DetalleSolicitud { get; set; }
         public Usuario Usuario { get; set; }
         public Estacion Estacion { get; set; }
+
+        //public override string ToString()
+        //    string a = DateTime.Now.ToShortDateString();
+        //}
     }
 }

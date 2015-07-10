@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="d5740514-02cc-4896-8d91-3f3a1458c426" name="sanchez@SANCHEZ-PC 2015-07-09 23:46:38" runUser="sanchez-PC\sanchez" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="e0b70997-861b-4675-abe8-167edbb03b99">
+    <Description>Esta es la configuración de pruebas predeterminada para una ejecución de pruebas local.</Description>
+    <Deployment enabled="false" runDeploymentRoot="sanchez_SANCHEZ-PC 2015-07-09 23_46_38">
+      <DeploymentItem filename="F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\Microsoft.Practices.Unity.Interception.Configuration.dll" />
+      <DeploymentItem filename="C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll" />
+      <DeploymentItem filename="C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll" />
+      <DeploymentItem filename="F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\DBSystem.BussinesEntities.dll" />
+      <DeploymentItem filename="F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\Microsoft.Practices.Unity.Interception.dll" />
+      <DeploymentItem filename="C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\packages\Eastupright.EnterpriseLibrary.Common.2015.6.16.2\lib\Eastupright.EnterpriseLibrary.Common.dll" />
+      <DeploymentItem filename="F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+      <DeploymentItem filename="C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Configuration.dll" />
+      <DeploymentItem filename="C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCInventarios.DAL\bin\Debug\CSCInventarios.DAL.dll" />
+      <DeploymentItem filename="F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+      <DeploymentItem filename="C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll" />
+      <DeploymentItem filename="F:\INfo\aaa_UPN\UPN 2012-1\PROYECTO INTEGRADOR II\Aplicaciones web\DBSystem\DBSystem.DataAccess\bin\Debug\DBSystem.DataAccess.dll" />
+      <DeploymentItem filename="C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCInventarios.EL\bin\Debug\CSCInventarios.EL.dll" />
+      <DeploymentItem filename="C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2015-07-09T23:46:38.1639564-05:00" queuing="2015-07-09T23:46:40.6931011-05:00" start="2015-07-09T23:46:40.7851063-05:00" finish="2015-07-09T23:46:41.5621508-05:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="CrearSolicitudTest" storage="c:\users\sanchez\documents\github\cscinventarios\sistemaweb\cscinventarios\cscnvetarios.testproject\bin\debug\cscnvetarios.testproject.dll" id="f4c31a3d-53ff-58b3-498f-590651c561dc">
+      <Execution id="52fc22df-584c-419a-88e8-9fba9f10f806" />
+      <TestMethod codeBase="C:/Users/sanchez/Documents/GitHub/CSCInventarios/SistemaWeb/CSCInventarios/CSCnvetarios.TestProject/bin/Debug/CSCnvetarios.TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CSCnvetarios.TestProject.SolicitudDALTest, CSCnvetarios.TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CrearSolicitudTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Resultados que no están en la lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos los resultados cargados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="f4c31a3d-53ff-58b3-498f-590651c561dc" executionId="52fc22df-584c-419a-88e8-9fba9f10f806" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="52fc22df-584c-419a-88e8-9fba9f10f806" testId="f4c31a3d-53ff-58b3-498f-590651c561dc" testName="CrearSolicitudTest" computerName="SANCHEZ-PC" duration="00:00:00.4500091" startTime="2015-07-09T23:46:40.7931068-05:00" endTime="2015-07-09T23:46:41.5071476-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="52fc22df-584c-419a-88e8-9fba9f10f806">
+      <Output>
+        <ErrorInfo>
+          <Message>El método de prueba CSCnvetarios.TestProject.SolicitudDALTest.CrearSolicitudTest produjo la excepción: 
+Microsoft.Practices.ServiceLocation.ActivationException: Activation error occured while trying to get instance of type Database, key "" ---&gt; Microsoft.Practices.Unity.ResolutionFailedException: Resolution of the dependency failed, type = "Microsoft.Practices.EnterpriseLibrary.Data.Database", name = "(none)".
+Exception occurred while: while resolving.
+Exception is: InvalidOperationException - The type Database does not have an accessible constructor.
+-----------------------------------------------
+At the time of the exception, the container was:
+
+  Resolving Microsoft.Practices.EnterpriseLibrary.Data.Database,(none)
+ ---&gt; System.InvalidOperationException: The type Database does not have an accessible constructor.</Message>
+          <StackTrace>    en Microsoft.Practices.ObjectBuilder2.DynamicMethodConstructorStrategy.ThrowForNullExistingObject(IBuilderContext context)
+   en BuildUp_Microsoft.Practices.EnterpriseLibrary.Data.Database(IBuilderContext )
+   en Microsoft.Practices.ObjectBuilder2.DynamicMethodBuildPlan.BuildUp(IBuilderContext context)
+   en Microsoft.Practices.ObjectBuilder2.BuildPlanStrategy.PreBuildUp(IBuilderContext context)
+   en Microsoft.Practices.ObjectBuilder2.StrategyChain.ExecuteBuildUp(IBuilderContext context)
+   en Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
+ --- Fin del seguimiento de la pila de la excepción interna ---
+    en Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
+   en Microsoft.Practices.Unity.UnityContainer.Resolve(Type t, String name, ResolverOverride[] resolverOverrides)
+   en Microsoft.Practices.Unity.UnityServiceLocator.DoGetInstance(Type serviceType, String key)
+   en Microsoft.Practices.ServiceLocation.ServiceLocatorImplBase.GetInstance(Type serviceType, String key) en c:\Home\Chris\Projects\CommonServiceLocator\main\Microsoft.Practices.ServiceLocation\ServiceLocatorImplBase.cs:línea 49
+ --- Fin del seguimiento de la pila de la excepción interna ---
+    en Microsoft.Practices.ServiceLocation.ServiceLocatorImplBase.GetInstance(Type serviceType, String key) en c:\Home\Chris\Projects\CommonServiceLocator\main\Microsoft.Practices.ServiceLocation\ServiceLocatorImplBase.cs:línea 53
+   en Microsoft.Practices.ServiceLocation.ServiceLocatorImplBase.GetInstance[TService]() en c:\Home\Chris\Projects\CommonServiceLocator\main\Microsoft.Practices.ServiceLocation\ServiceLocatorImplBase.cs:línea 90
+   en CSCInventarios.DAL.cnx..ctor() en C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCInventarios.DAL\cnx.cs:línea 15
+   en CSCInventarios.DAL.SolicitudDAL..ctor() en C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCInventarios.DAL\SolicitudDAL.cs:línea 30
+   en CSCnvetarios.TestProject.SolicitudDALTest.CrearSolicitudTest() en C:\Users\sanchez\Documents\GitHub\CSCInventarios\SistemaWeb\CSCInventarios\CSCnvetarios.TestProject\SolicitudDALTest.cs:línea 89
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

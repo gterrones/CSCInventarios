@@ -61,7 +61,9 @@
     <table class="style3">
         <tr>
             <td>
-                &nbsp;</td>
+                <asp:Button ID="btnIniciarSolicitud" runat="server" 
+                    onclick="btnIniciarSolicitud_Click" Text="Inniciar Solicitud" />
+            </td>
             <td>
                 &nbsp;</td>
         </tr>
@@ -87,7 +89,9 @@
                     DataTextField="estacion_nombre" DataValueField="estacion_id">
                 </asp:DropDownList>
                 <asp:ObjectDataSource ID="odsLeerTodasLasEstaciones" runat="server" 
-                    SelectMethod="LeerTodasLasEstaciones" TypeName="CSCInventarios.BL.EstacionBL">
+                    SelectMethod="LeerTodasLasEstaciones" 
+                    TypeName="CSCInventarios.BL.EstacionBL" 
+                    onobjectcreating="odsLeerTodasLasEstaciones_ObjectCreating">
                 </asp:ObjectDataSource>
             </td>
             <td class="style23">
@@ -187,7 +191,8 @@
         </tr>
         <tr>
             <td>
-                &nbsp;</td>
+                <asp:Button ID="Button1" runat="server" Text="Button" />
+            </td>
             <td>
                 &nbsp;</td>
         </tr>
